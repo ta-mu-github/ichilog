@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-  root to: 'groups#index'
+  root to: 'logins#index'
   #root to: 'posts#index'
 end
