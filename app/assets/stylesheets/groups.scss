@@ -1,0 +1,36 @@
+.Wrapper{
+  height:100vh;
+  width:100vw;
+  background-color:#FFC0CB;
+}
+
+.Logo{
+  height: calc(100vh - 300px);
+  padding-top:50px;
+  display:flex;
+  justify-content: center;
+  align-items: center;  
+  text-align:center;
+
+  &__title{
+    font-size:100px;
+  }
+
+  &__catchcopy{
+    font-size:32px;
+  }
+}
+
+.Account_touroku{
+  height:200px;
+  text-align:center;
+}
+
+.Login_button{
+  display: flex;
+  justify-content: center;  
+}
+
+.Account__btn{
+  padding:30px;
+}
