@@ -1,27 +1,33 @@
 .Wrapper
-  .Logo
-    .Logo_waku
-      %h1.Logo__title
+  .Header
+    .Header__list
+      .Header__logo
+        ヘッダーです
+
+  .Main
+    .Logo
+      %h1.Logo__waku
         イチログ
-      %h3.Logo__catchcopy
-        キャッチコピー
+        //%img.Logo__title{ src: "/assets/logo.png", alt: "logo" }
+          
+    %h3.Logo__catchcopy
+      好きなものをレビューをしよう！
 
-  .Account_touroku
-    .Login_form
-      .Login_form__mailaddress
-        メールアドレス
-      .Login_form__password
-        パスワード（英数字８文字以上）
+    .Account_touroku
+      .Login_form
+        %input.Login_form__mailaddress{name: "email", placeholder: "メールアドレス", type: "email", value: ""}/          
+        %input.Login_form__password{name: "password", placeholder: "パスワード（英数字８文字以上）", type: "password", value: ""}/        
 
-      .Login_form__loginbtn
-        ログイン
+        %button.Login_form__loginbtn
+          ログイン
+             
 
 
-    %ul.Login_button   
-      %li.Account__btn 
-        新規登録
-      %li.Account__btn 
-        Twitterで登録
-      %li.Account__btn 
-        Googleで登録    
+  %ul.footer   
+    %li.Account__btn 
+      新規登録
+    %li.Account__btn 
+      Twitterで登録
+    %li.Account__btn 
+      Googleで登録    
     .Account__touroku--btn
