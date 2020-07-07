@@ -1,0 +1,25 @@
+.contents{
+  height:100vh;
+  width:100vw;
+  background-color:#2626ff;
+  background-image:linear-gradient(135deg,#0ebfee,#2626ff);
+  color:white;    
+  display:flex;
+  justify-content: center;
+  align-items: center;  
+}
+
+.container{
+  border: 1px solid white;
+  padding: 50px 300px;
+
+  h2{
+    font-size:32px;
+  }
+
+  input{
+    padding:10px 100px;
+    margin:10px;
+  }
+}
+
