@@ -1,0 +1,99 @@
+.Mypage
+  .Header
+    .Header__left
+      イチログ
+
+    .Header__right
+      = link_to "ログアウト", destroy_user_session_path, class: "Header__logout", method: :delete
+      = current_user.email
+
+  .Mypage_Main
+    .Mypage_Main__left
+      .User_infomation
+        .Profile_waku
+          .Profile_waku__image
+            = link_to "#", class: "Account__btn Account__btn--User" do
+              = icon('fas', 'user-circle fa-5x',  class: "Account__btn--icon")        
+          .Profile_waku__user_name
+            %h1 
+            =current_user.email
+
+        .Infomation
+          .Infomation__reviewcount
+            レビュー数
+          .Infomation__reviewcount
+            総いいね数
+          .Infomation__reviewcount
+            XXX          
+
+      .Toukou
+        %button.Toukou--btn
+          レビューを投稿する
+
+    .Mypage_Main__right
+      %h1 最新のレビュー
+
+      .Review
+        .Review_left
+          .Review_left__image
+            image
+        .Review_right
+          .Title_category 
+            .Title_category__title
+              ゼロ秒思考
+            .Title_category__category
+              本              
+          .Review_right__Honbun
+            本文〜<br>本文〜<br>本文…（続きを読む）
+
+          .Right_kabu
+            .Right_kabu__date
+              2020-07-08 mm:dd
+            .Right_kabu__info
+              %h2
+                編集            
+              %h2
+                削除
+      .Review
+        .Review_left
+          .Review_left__image
+            image
+        .Review_right
+          .Title_category 
+            .Title_category__title
+              スマブラSP
+            .Title_category__category
+              ゲーム              
+          .Review_right__Honbun
+            本文〜<br>本文〜<br>本文…（続きを読む）
+
+          .Right_kabu
+            .Right_kabu__date
+              2020-07-08 mm:dd
+            .Right_kabu__info
+              %h2
+                編集            
+              %h2
+                削除
+
+      .Review
+        .Review_left
+          .Review_left__image
+            image
+        .Review_right
+          .Title_category 
+            .Title_category__title
+              わたぼく
+            .Title_category__category
+              清涼飲料水              
+          .Review_right__Honbun
+            本文〜<br>本文〜<br>本文…（続きを読む）
+
+          .Right_kabu
+            .Right_kabu__date
+              2020-07-08 mm:dd
+            .Right_kabu__info
+              %h2
+                編集            
+              %h2
+                削除

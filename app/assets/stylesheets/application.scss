@@ -4,3 +4,30 @@
 @import "modules/logins";
 @import "modules/signup";
 @import "modules/users";
+
+.Header{
+  height:60px;
+  background-color:white;
+  color:black;
+  display:flex;
+
+  &__left{
+    width:50%;
+
+  }
+
+  &__right{
+    width:50%;
+    display:flex;
+    justify-content: space-evenly;
+  }  
+
+  &__login{
+    color:black;
+  }
+
+  &__logout{
+    color:black;
+    margin-right:10px;
+  }
+}

@@ -1,35 +1,4 @@
-.Wrapper
-  .Container
-    .Main
-      .Logo
-        %h1.Logo__waku
-          イチログ
-          //%img.Logo__title{ src: "/assets/logo.png", alt: "logo" }
-            
-      %h3.Logo__catchcopy
-        あなたの好きなものをレビューをしよう！
-
-      .Account_touroku
-        .Login_form
-          %input.Login_form__mailaddress{name: "email", placeholder: "メールアドレス", type: "email", value: ""}/          
-          %input.Login_form__password{name: "password", placeholder: "パスワード（英数字８文字以上）", type: "password", value: ""}/        
-
-          %button.Login_form__loginbtn
-            ログイン
-              
-
-
-    %ul.footer   
-      %ul.Account
-        %li
-          = link_to new_user_registration_path, class: "Account__btn Account__btn--shinki" do
-            新規登録
-        %li
-          = link_to "#", class: "Account__btn Account__btn--twitter" do
-            = icon('fab', 'twitter',  class: "Account__btn--icon")
-            Twitterで登録
-        %li
-          = link_to "#", class: "Account__btn Account__btn--google" do
-            = icon('fab', 'google',  class: "Account__btn--icon")
-            googleで登録
-      .Account__touroku--btn
+- if user_signed_in?
+  = render 'users/index'
+-else
+  = render 'users/top'
