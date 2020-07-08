@@ -1,11 +1,11 @@
 .Mypage
   .Header
-    .Header__left
+    .Header_left
       イチログ
 
-    .Header__right
-      = link_to "ログアウト", destroy_user_session_path, class: "Header__logout", method: :delete
-      = current_user.email
+    .Header_right
+      = link_to "ログアウト", destroy_user_session_path, class: "Header_right__loginlogout Header_right__loginlogout--logout", method: :delete
+      = current_user.user_name
 
   .Mypage_Main
     .Mypage_Main__left
@@ -16,7 +16,7 @@
               = icon('fas', 'user-circle fa-5x',  class: "Account__btn--icon")        
           .Profile_waku__user_name
             %h1 
-            =current_user.email
+            =current_user.user_name
 
         .Infomation
           .Infomation__reviewcount

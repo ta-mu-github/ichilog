@@ -1,27 +1,22 @@
 .Wrapper
   .Container
     .Header
-      .Header__left
+      .Header_left
         イチログ      
-      .Header__right
-        = link_to "ログイン", new_user_session_path, class: "Header__login" 
+      .Header_right
+        = link_to "ログイン", new_user_session_path, class: "Header_right__loginlogout Header_right__loginlogout--login" 
     .Main
       .Logo
         %h1.Logo__waku
           イチログ
-          //%img.Logo__title{ src: "/assets/logo.png", alt: "logo" }
               
       %h3.Logo__catchcopy
         あなたの好きなものをレビューをしよう！
 
       .Account_touroku
         .Login_form
-          %input.Login_form__mailaddress{name: "email", placeholder: "メールアドレス", type: "email", value: ""}/          
-          %input.Login_form__password{name: "password", placeholder: "パスワード（英数字８文字以上）", type: "password", value: ""}/        
-
-          %button.Login_form__loginbtn
-            ログイン
-                
+          = link_to "ログインする", new_user_session_path, class: "Login_form__login Login_form__login--kokosaito" 
+          = link_to "他サイトでログインする", "#", class: "Login_form__login Login_form__login--tasaito"       
 
 
     %ul.footer   

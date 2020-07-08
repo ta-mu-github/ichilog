@@ -50,11 +50,24 @@
     margin:10px;
   }
 
-  &__loginbtn{
+
+
+  &__login{
     margin-top:10px;
     width:20%;
     border-radius:20px;
     padding:10px;
+   
+
+    &--kokosaito{
+      color:black;
+      background-color:yellow;
+      margin: 10px 0px;
+    }
+    &--tasaito{
+      color:white;
+      background-color:blue;
+    }
 
   }
 }
