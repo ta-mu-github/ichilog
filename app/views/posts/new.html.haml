@@ -1,0 +1,24 @@
+=render 'users/header'
+
+.Post_Main
+  .Post_Area
+    = form_with(model: @posts, local: true) do |f|
+      .Post_Area__Waku
+        = f.text_area :name, class:"Post_Area--shouhin_area", placeholder: '商品名'
+
+      .Post_Area__Waku
+        = f.text_area :category, class:"Post_Area--categroy_area", placeholder: 'カテゴリ'
+
+      .Post_Area__Waku
+        評価 <br>
+        ☆☆☆☆☆
+
+      .Post_Area__Waku
+        画像 []
+        
+      .Post_Area__Waku
+        = f.text_area :content, class:"Post_Area--honbun_area", placeholder: 'レビューや感想を書く。'              
+
+      .Post_submit
+        .Post_submit__toukou
+          = link_to "投稿する", root_path, class: "Post_submit__toukou--btn"
