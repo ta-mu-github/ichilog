@@ -2,13 +2,8 @@ class UsersController < ApplicationController
 #  before_action :move_to_index, except: [:index, :show]
 
   def index
-    @user = User.all
+    @users = User.includes(:user).order("created_at DESC")
+    @messages = @group.messages.includes(:user)
   end
 
-
-  
-#  def move_to_index
-#    redirect_to action: :index unless user_signed_in?
-#  end
-  
 end

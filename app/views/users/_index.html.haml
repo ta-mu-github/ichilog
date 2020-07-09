@@ -1,6 +1,5 @@
 .Mypage
   =render 'users/header'
-
   .Mypage_Main
     .Mypage_Main__left
       .User_infomation
@@ -27,71 +26,27 @@
         
           
 
-    .Mypage_Main__right
-    
+    .Mypage_Main__right    
       %h1 タイムライン
+      - current_user.posts.each do |p|  
+        .Review
+          .Review_left
+            .Review_left__image
+              =p.image
+          .Review_right
+            .Title_category 
+              .Title_category__title
+                =p.title
+              .Title_category__category
+                =p.category              
+            .Review_right__Honbun
+              =p.content
 
-      .Review
-        .Review_left
-          .Review_left__image
-            image
-        .Review_right
-          .Title_category 
-            .Title_category__title
-              ゼロ秒思考
-            .Title_category__category
-              本              
-          .Review_right__Honbun
-            本文〜<br>本文〜<br>本文…（続きを読む）
-
-          .Right_kabu
-            .Right_kabu__date
-              2020-07-08 mm:dd
-            .Right_kabu__info
-              %h2
-                編集            
-              %h2
-                削除
-      .Review
-        .Review_left
-          .Review_left__image
-            image
-        .Review_right
-          .Title_category 
-            .Title_category__title
-              スマブラSP
-            .Title_category__category
-              ゲーム              
-          .Review_right__Honbun
-            本文〜<br>本文〜<br>本文…（続きを読む）
-
-          .Right_kabu
-            .Right_kabu__date
-              2020-07-08 mm:dd
-            .Right_kabu__info
-              %h2
-                編集            
-              %h2
-                削除
-
-      .Review
-        .Review_left
-          .Review_left__image
-            image
-        .Review_right
-          .Title_category 
-            .Title_category__title
-              わたぼく
-            .Title_category__category
-              清涼飲料水              
-          .Review_right__Honbun
-            本文〜<br>本文〜<br>本文…（続きを読む）
-
-          .Right_kabu
-            .Right_kabu__date
-              2020-07-08 mm:dd
-            .Right_kabu__info
-              %h2
-                編集            
-              %h2
-                削除
+            .Right_kabu
+              .Right_kabu__date
+                =p.created_at
+              .Right_kabu__info
+                %h2
+                  編集            
+                %h2
+                  削除
