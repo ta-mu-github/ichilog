@@ -13,20 +13,5 @@
       .Account_touroku
         .Login_form
           = link_to "ログインする", new_user_session_path, class: "Login_form__login Login_form__login--kokosaito" 
-          = link_to "他サイトでログインする", "#", class: "Login_form__login Login_form__login--tasaito"       
+          = link_to "新規登録", new_user_registration_path, class: "Login_form__login Login_form__login--tasaito"       
 
-
-    %ul.footer   
-      %ul.Account
-        %li
-          = link_to new_user_registration_path, class: "Account__btn Account__btn--shinki" do
-            新規登録
-        %li
-          = link_to "#", class: "Account__btn Account__btn--twitter" do
-            = icon('fab', 'twitter',  class: "Account__btn--icon")
-            Twitterで登録
-        %li
-          = link_to "#", class: "Account__btn Account__btn--google" do
-            = icon('fab', 'google',  class: "Account__btn--icon")
-            googleで登録
-      .Account__touroku--btn

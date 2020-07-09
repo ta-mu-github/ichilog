@@ -78,35 +78,3 @@
   height:100px;
 
 }
-.Account{
-  display: flex;
-  justify-content: center;
-  text-align:center;  
-}
-
-.Account__btn{
-  margin:10px;
-  padding:10px;
-  width:10%;
-  border-radius: 20px;
-  
-  &--shinki{
-    background:#34526f;
-    padding: 10px 40px;
-  }
-
-  &--twitter{
-    background:#00aced;
-  }
-  &--google{
-    background:#db4a39;
-  }
-
-
-}
-
-a{
-  color:#fff;
-  font-size:16px;
-  text-decoration:none;
-}

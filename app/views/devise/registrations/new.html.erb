@@ -34,6 +34,17 @@
       <% end %>
     </div>
 
-    <div class="Touroku_right">    
+    <div class="Touroku_right"> 
+        <ul class="Account">
+          <li class="Account__btn Account__btn--twitter">
+            <%= icon('fab', 'twitter',  class: "Account__btn--icon")%>
+            <%= link_to 'Twitterで登録','#' %>                             
+          </li>
+
+          <li class="Account__btn Account__btn--google">        
+            <%= icon('fab', 'google',  class: "Account__btn--icon")%>          
+            <%= link_to 'googleで登録' %>                    
+          </li>
+        </ul>            
     </div>
 </div>
