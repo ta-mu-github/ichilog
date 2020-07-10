@@ -1,1 +1,22 @@
-投稿完了
+=render 'users/header'
+.Shousai
+  .Oowaku
+    .Review
+      .Review__title
+        =@posts.title
+        .Review__category
+          =@posts.category
+        .Review__image
+          =@posts.image
+          
+      .Review__Honbun
+        =@posts.content
+
+      .Right_kabu
+        .Right_kabu__date
+          =@posts.created_at
+        .Right_kabu__info
+          %h2
+            編集            
+          %h2
+            削除

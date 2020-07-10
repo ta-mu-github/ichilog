@@ -1,5 +1,4 @@
 .Mypage
-  =render 'users/header'
   .Mypage_Main
     .Mypage_Main__left
       .User_infomation
@@ -36,7 +35,7 @@
           .Review_right
             .Title_category 
               .Title_category__title
-                =p.title
+                =link_to p.title, post_path(p.id)
               .Title_category__category
                 =p.category              
             .Review_right__Honbun
@@ -47,6 +46,6 @@
                 =p.created_at
               .Right_kabu__info
                 %h2
-                  編集            
+                  = link_to "編集", edit_post_path(p.id)          
                 %h2
-                  削除
+                  = link_to "削除", post_path(p.id), method: :delete      

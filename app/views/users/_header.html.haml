@@ -7,4 +7,3 @@
       = link_to "ログアウト", destroy_user_session_path, class: "Header_right__loginlogout Header_right__loginlogout--logout", method: :delete
       = current_user.user_name
     -else
-      = link_to "ログイン", new_user_session_path, class: "Header_right__loginlogout Header_right__loginlogout--login" 

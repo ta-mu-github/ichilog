@@ -6,4 +6,9 @@ class UsersController < ApplicationController
     @messages = @group.messages.includes(:user)
   end
 
+  def show
+    @users = User.find(params[:id])
+  end
+
+
 end
