@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-#  before_action :move_to_index, except: [:index, :show]
+  before_action :set_user_id, only: [:show]
 
   def index
     @users = User.includes(:user).order("created_at DESC")
@@ -7,8 +7,13 @@ class UsersController < ApplicationController
   end
 
   def show
+  end
+
+  private
+  def set_user_id
     @users = User.find(params[:id])
   end
+
 
 
 end
