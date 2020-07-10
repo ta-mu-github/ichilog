@@ -45,7 +45,9 @@
               .Right_kabu__date
                 =p.created_at
               .Right_kabu__info
-                %h2
-                  = link_to "編集", edit_post_path(p.id)          
-                %h2
-                  = link_to "削除", post_path(p.id), method: :delete      
+                - if user_signed_in? && current_user.id == p.user_id
+                  %h2
+                    = link_to "編集", edit_post_path(p.id)          
+                  %h2
+                    = link_to "削除", post_path(p.id), method: :delete      
+                - else
