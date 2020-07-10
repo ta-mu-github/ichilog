@@ -1,6 +1,6 @@
 .Shousai{
   height:100vh;
-  width:100vw;
+  max-width:100vw;
   background-color: #2626ff;
   background-image: linear-gradient(135deg, #0ebfee, #2626ff);
   color: white;
@@ -8,15 +8,22 @@
 }
 
 
-.Oowaku{
+.Shousai_Oowaku{
   display: flex;
   align-items: center;
   justify-content: center;
-  height: calc(100vh - 60px);
-  overflow: scroll;
+  height: calc(100vh - 80px);
+  width:100%;
 }
 
-.Review{
-  max-width:680px;
+
+.Shousai_left{
+  width:30vw;
+  padding: 50px;
 }
 
+.Shousai_right{
+  width: 50vw;
+  height: calc(100% - 100px);
+  padding:50px;
+}

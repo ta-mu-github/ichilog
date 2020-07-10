@@ -24,30 +24,33 @@
           = link_to "レビューを投稿する", new_post_path, class: "Toukou__Review--btn"
         
           
-
-    .Mypage_Main__right    
+    .Mypage_Main__right                  
       %h1 タイムライン
-      - @users.posts.each do |p|  
-        .Review
-          .Review_left
-            .Review_left__image
-              =p.image
-          .Review_right
-            .Title_category 
-              .Title_category__title
-                =link_to p.title, post_path(p.id)
-              .Title_category__category
-                =p.category              
-            .Review_right__Honbun
-              =p.content
-
-            .Right_kabu
-              .Right_kabu__date
-                =p.created_at
-              .Right_kabu__info
-                - if user_signed_in? && current_user.id == p.user_id
-                  %h2
-                    = link_to "編集", edit_post_path(p.id)          
-                  %h2
-                    = link_to "削除", post_path(p.id), method: :delete      
+      .Mypage_Main__right_info
+        - @users.posts.each do |p|  
+          .Review
+            .Review_left
+              .Review_left__image
+                - if p.image.present?
+                  =image_tag p.image.url, size: "250x200", alt: "画像"
                 - else
+                  画像なし
+            .Review_right
+              .Title_category 
+                .Title_category__title
+                  =link_to p.title, post_path(p.id)
+                .Title_category__category
+                  =p.category              
+              .Review_right__Honbun
+                =p.content
+
+              .Right_kabu
+                .Right_kabu__date
+                  =p.created_at
+                .Right_kabu__info
+                  - if user_signed_in? && current_user.id == p.user_id
+                    %h2
+                      = link_to "編集", edit_post_path(p.id)          
+                    %h2
+                      = link_to "削除", post_path(p.id), method: :delete      
+                  - else

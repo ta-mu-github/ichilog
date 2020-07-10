@@ -1,15 +1,15 @@
 .Shousai
-  .Oowaku
-    .Review
-      .Review__title
+  .Shousai_Oowaku
+    .Shousai_left
+      .Shousai_left__image
+        - if @posts.image.present?
+          =image_tag @posts.image.url, size: "350x400", alt: "画像"
+        - else
+          画像なし       
+      .Shousai_left__title
         =@posts.title
-        .Review__category
+        .Shousai_left__category
           =@posts.category
-        .Review__image
-          =@posts.image
-          
-      .Review__Honbun
-        =@posts.content
 
       .Right_kabu
         .Right_kabu__date
@@ -18,4 +18,10 @@
           %h2
             編集            
           %h2
-            削除
+            削除          
+       
+
+    .Shousai_right      
+      .Shousai__Honbun
+        =@posts.content
+

@@ -12,7 +12,9 @@
         ☆☆☆☆☆
 
       .Post_Area__Waku
-        画像 []
+        = f.label :image, class: 'Main__image' do
+          = icon('far', 'image', class: 'Main__icon')
+          = f.file_field :image, class: 'Main__Hidden'
         
       .Post_Area__Waku
         = f.text_area :content, class:"Post_Area--honbun_area", placeholder: 'レビューや感想を書く。'              

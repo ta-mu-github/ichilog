@@ -19,6 +19,7 @@ class UsersController < ApplicationController
 
   #マイページ(GET)
   def show
+#    binding.pry
   end
 
   #=========================プライベートメソッド=========================#
@@ -27,6 +28,7 @@ class UsersController < ApplicationController
   private
   def set_user_id
     @users = User.find(params[:id])
+#    @posts = Post.find(params[:id])
   end
 
   #ログインしていない場合、indexに飛ばす。

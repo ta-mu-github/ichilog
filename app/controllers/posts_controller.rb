@@ -15,6 +15,7 @@ class PostsController < ApplicationController
   #投稿詳細（GET）
   def show
     @posts = Post.find(params[:id])
+    #binding.pry
   end
 
   #投稿を保存する処理（POST）
@@ -51,7 +52,7 @@ class PostsController < ApplicationController
   #ストロングパラメータ          
   private
   def post_params
-    params.require(:post).permit(:title, :category, :content).merge(user_id: current_user.id)
+    params.require(:post).permit(:title, :category, :content, :image).merge(user_id: current_user.id)
   end
 
   #ログインしていない場合「indexアクション」に飛ばす。      
