@@ -5,7 +5,8 @@ class Post < ApplicationRecord
     validates :content
   end
 
-  belongs_to :user
+  belongs_to :user   #ユーザテーブルとのアソシエーション
+  has_many :comments #コメントテーブルとのアソシエーション
 
   mount_uploader :image, ImageUploader
 

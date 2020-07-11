@@ -15,7 +15,9 @@ class PostsController < ApplicationController
   #投稿詳細（GET）
   def show
     @posts = Post.find(params[:id])
-    #binding.pry
+    @comment = Comment.new
+    @comments = @posts.comments.includes(:user)
+    
   end
 
   #投稿を保存する処理（POST）

@@ -3,7 +3,12 @@
     = link_to "イチログ", root_path
 
   .Header_right
-    - if user_signed_in?    
+    .Search
+      = icon('fas', 'search',  class: "Account__btn--icon")
+      投稿を検索する
+      //%input.Search--area{placeholder: "投稿を検索する"}
+    
+    - if user_signed_in?
       = link_to "ログアウト", destroy_user_session_path, class: "Header_right__loginlogout Header_right__loginlogout--logout", method: :delete
       = current_user.user_name
     -else

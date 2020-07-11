@@ -25,4 +25,22 @@
       .Shousai__Honbun
         =@posts.content
 
-  .Comments     
+  .Comments
+    .Coment_Waku
+      .Coment_Waku--ichiran    
+        -if @comments
+          -@comments.each do |comment|
+            =comment.text             
+        -else
+          まだ
+        
+
+
+      .Coment_Waku--toukou    
+        -if current_user        
+          = form_with(model: [@posts,@comment], local: true) do |form|
+            = form.text_area :text, placeholder: "コメントする", rows: "2"
+            = form.submit "SEND"
+        -else
+          %p ※コメントの投稿には新規登録、またはログインが必要です※
+          
