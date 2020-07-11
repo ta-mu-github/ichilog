@@ -44,6 +44,19 @@
               .Review_right__Honbun
                 =p.content
 
+              //削除するいいねを”likesテーブルのIDから取得したい！！現在はpostidを取得している。”
+              .Right_iine
+                - if Like.find_by(user_id:current_user.id, post_id: p.id)
+                  = link_to("/likes/#{p.id}/destroy", {method: "post"}) do
+                    = icon('fas', 'heart',  class: "Account__btn--icon")
+                - else
+                  = link_to("/likes/#{p.id}/create", {method: "post"}) do
+                    = icon('far', 'heart',  class: "Account__btn--icon")                
+
+              =Like.where(post_id: p.id).count
+                
+              
+
               .Right_kabu
                 .Right_kabu__date
                   =p.created_at
