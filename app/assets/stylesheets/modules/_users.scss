@@ -69,13 +69,27 @@
 
     &--kokosaito{
       color:black;
-      background-color:yellow;
+      background-color:#FFFF1A;
       margin: 10px 0px;
+      box-shadow: 0 5px #E6E600;
     }
+
+    &--kokosaito:active{
+      position:relative;
+      top:6px;
+      box-shadow:none;
+    }
+
     &--tasaito{
       color:white;
-      background-color:blue;
-    }
+      background-color:#3333FF;
+      box-shadow: 0 5px #3818ED;    }
+
+      &--tasaito:active{
+        position:relative;
+        top:6px;
+        box-shadow:none;
+      }
 
   }
 }
@@ -145,7 +159,7 @@
   .Infomation{
     display:flex;
     justify-content: space-around;
-    margin: 10px 0px 30px 0px;
+    text-align: center;
     border: 1px solid;
   }
 
@@ -223,11 +237,16 @@
 
       &__title{
         font-size:24px;
-        width:30%;
+        width:70%;
+
+        a{
+          font-size:32px;
+        }
+
       }
 
       &__category{
-
+        width:30%;
       }
 
     }
@@ -250,7 +269,7 @@
 
 /***アカウント登録、ログイン***/
 .contents{
-  height: calc(100vh - 60px);
+  height: calc(100vh - 80px);
   width:100vw;
   background-color:#2626ff;
   background-image:linear-gradient(135deg,#0ebfee,#2626ff);

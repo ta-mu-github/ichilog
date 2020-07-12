@@ -12,11 +12,13 @@
 
         .Infomation
           .Infomation__reviewcount
-            レビュー数
+            レビュー数<br>
+            =Post.where(user_id: @users.id).count
+
           .Infomation__reviewcount
-            総いいね数
-          .Infomation__reviewcount
-            XXX          
+            いいねされた数<br>
+            =Like.where(user_id: @users.id).count            
+
 
       .Toukou
         .Toukou__Review
@@ -45,12 +47,13 @@
                 =p.content
 
               //削除するいいねを”likesテーブルのIDから取得したい！！現在はpostidを取得している。”
+              //- @likes.each do |like|  
               .Right_iine
                 - if Like.find_by(user_id:current_user.id, post_id: p.id)
-                  = link_to("/likes/#{p.id}/destroy", {method: "post"}) do
+                  = link_to(like_path(p.id), {method: "delete"}) do
                     = icon('fas', 'heart',  class: "Account__btn--icon")
                 - else
-                  = link_to("/likes/#{p.id}/create", {method: "post"}) do
+                  = link_to(likes_path, {method: "post"}) do
                     = icon('far', 'heart',  class: "Account__btn--icon")                
 
               =Like.where(post_id: p.id).count
