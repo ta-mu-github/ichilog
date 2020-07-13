@@ -3,44 +3,58 @@
     .Shousai_left
       .Shousai_left__image
         - if @posts.image.present?
-          =image_tag @posts.image.url, size: "350x400", alt: "画像"
+          =image_tag @posts.image.url, alt: "画像"
         - else
-          画像なし       
-      .Shousai_left__title
-        =@posts.title
-        .Shousai_left__category
+          %img.Review_left__No_image{ src: "/assets/Noimage.png", alt: "logo" } 
+      .Shousai_information    
+        .Shousai_left__title
+          タイトル：
+          =@posts.title
+          .Shousai_left__category
+          カテゴリ：
           =@posts.category
 
-      .Right_kabu
-        .Right_kabu__date
-          =@posts.created_at
-        .Right_kabu__info
-          %h2
-            編集            
-          %h2
-            削除          
+        .Right_kabu
+          .Right_kabu__date
+            更新日時：
+            =@posts.updated_at
+          .Right_kabu__info
+            %h2
+              編集            
+            %h2
+              削除          
        
 
     .Shousai_right      
       .Shousai__Honbun
         =@posts.content
 
-  .Comments
-    .Coment_Waku
-      .Coment_Waku--ichiran    
-        -if @comments
-          -@comments.each do |comment|
-            =comment.text             
-        -else
-          まだ
-        
+      .Comments
+        .Coment_Waku
 
+          .Coment_Waku--ichiran    
+            コメント一覧：
+            -if @comments
+              -@comments.each do |comment|
+                .Come_waku
+                  .Come_waku__userinfo
+                    .Come_waku__user
+                      顔画像    
+                    .Come_waku__info
+                      ユーザーネーム     
 
-      .Coment_Waku--toukou    
-        -if current_user        
-          = form_with(model: [@posts,@comment], local: true) do |form|
-            = form.text_area :text, placeholder: "コメントする", rows: "2"
-            = form.submit "SEND"
-        -else
-          %p ※コメントの投稿には新規登録、またはログインが必要です※
+                  .Come_waku__honbun
+                    =comment.text 
+                  .Come_waku__sonota
+            -else
+              ※まだコメントはありません。            
+
+          .Coment_Waku--toukou    
+            -if current_user        
+              = form_with(model: [@posts,@comment], local: true) do |form|
+                = form.text_area :text, placeholder: "コメントする", rows: "2"
+                = form.submit "SEND"
+            -else
+              %p ※コメントの投稿には新規登録、またはログインが必要です※
+          
           

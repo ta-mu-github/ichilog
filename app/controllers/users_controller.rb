@@ -27,7 +27,7 @@ class UsersController < ApplicationController
   private
   def set_user_id
      @users = User.find(params[:id])
-     @likes = Like.where(user_id: @users.id)
+     #binding.pry
   end
 
   #ログインしていない場合、indexに飛ばす。
