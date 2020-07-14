@@ -21,6 +21,8 @@ class UsersController < ApplicationController
   def show
   end
 
+
+
   #=========================プライベートメソッド=========================#
   
   #IDを受け取る

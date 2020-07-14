@@ -49,6 +49,12 @@ class PostsController < ApplicationController
     redirect_to root_path
   end
 
+  #投稿を検索する処理（GET）
+  def search
+    @posts = Post.search(params[:keyword])
+  end
+
+
   #=========================プライベートメソッド=========================#
 
   #ストロングパラメータ          
