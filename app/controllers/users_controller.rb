@@ -19,6 +19,7 @@ class UsersController < ApplicationController
 
   #マイページ(GET)
   def show
+
   end
 
 
@@ -29,7 +30,7 @@ class UsersController < ApplicationController
   private
   def set_user_id
      @users = User.find(params[:id])
-     #binding.pry
+     @posts = Post.where(user_id: @users.id).order("created_at DESC")
   end
 
   #ログインしていない場合、indexに飛ばす。

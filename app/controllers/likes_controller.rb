@@ -1,17 +1,18 @@
 class LikesController < ApplicationController
-  before_action :authenticate_user
+
+  before_action :authenticate_user!
 
   def create
-    binding.pry
-    @like = Like.new(user_id: @current_user.id, post_id: params[:post_id])
+    @like = Like.new(user_id: current_user.id, post_id: params[:id])
     @like.save
-    redirect_to("/posts/#{params[:post_id]}")
+    binding.pry
+    redirect_to root_path
   end
 
   def destroy
-    @like = Like.find_by(user_id: @current_user.id, post_id: params[:post_id])
+    @like = Like.find_by(user_id: current_user.id, post_id: params[:id])
     @like.destroy
-    redirect_to("/posts/#{params[:post_id]}")
+    redirect_to root_path
   end
   
 end

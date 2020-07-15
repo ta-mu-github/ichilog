@@ -48,7 +48,7 @@
     .Mypage_Main__right                  
       %h1 タイムライン
       .Mypage_Main__right_info
-        - @users.posts.each do |p|  
+        - @posts.each do |p|  
           .Review
             .Review_left
               .Review_left__image
@@ -65,7 +65,7 @@
                 .HyoukatoCategory  
                   .HyoukatoCategory__hyouka
                     評価：
-                    ★★★★☆                                
+                    =p.rate                                
                   .HyoukatoCategory__category
                     カテゴリ：
                     =p.category              
@@ -82,7 +82,7 @@
                     = link_to(like_path(p.id), {method: "delete"}) do
                       = icon('fas', 'heart',  class: "Account__btn--icon")
                   - else
-                    = link_to(likes_path, {method: "post"}) do
+                    = link_to(likes_path(p.id)) do
                       = icon('far', 'heart',  class: "Account__btn--icon")                
 
                   =Like.where(post_id: p.id).count

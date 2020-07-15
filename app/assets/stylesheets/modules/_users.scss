@@ -1,3 +1,12 @@
+@keyframes typing {
+  from { width: 0 }
+}
+
+@keyframes cursor {
+  50% { border-right-color: transparent; }
+}
+
+
 /***トップページ（ログイン前）***/
 //全体部分
 .Wrapper{
@@ -26,6 +35,9 @@
 
 .Logo{
   padding-top:30px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
 
   &__waku{
     font-size:140px;    
@@ -34,12 +46,19 @@
     letter-spacing: 0.15em;
     text-shadow: black 1px 1px 0px, black -1px 1px 0px, black 1px -1px 0px, black -1px -1px 0px;
     
+
+      width: 7ch;           //文字数
+      overflow: hidden;     //この設定のおかげで文字がどんどん出てくるような表現ができている
+      white-space: nowrap;  //文字列が折り返すのを防ぐ  ←これはよくわからない
+      border-right: .08em solid white; //キーボードの縦棒。（emが大きくなるほど太くなる）
+      animation: typing 3s steps(10),   //  アニメーション処理「typing」を呼び出している。 *sでタイピング速度。steps(*)で文字が表示される間隔。
+      cursor 1s steps(1) infinite;      //  カーソルを点滅させる処理「cursor」を呼び出している。
+
   }
 
   &__catchcopy{
-    padding-bottom:30px;
-    font-size:20px;
-    
+
+
   }
 
   &__title{

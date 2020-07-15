@@ -60,7 +60,7 @@ class PostsController < ApplicationController
   #ストロングパラメータ          
   private
   def post_params
-    params.require(:post).permit(:title, :category, :content, :image).merge(user_id: current_user.id)
+    params.require(:post).permit(:title, :category, :content, :image, :rate).merge(user_id: current_user.id)
   end
 
   #ログインしていない場合「indexアクション」に飛ばす。      

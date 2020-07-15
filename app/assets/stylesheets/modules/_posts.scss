@@ -13,7 +13,7 @@
 .Post_Area{
   display:flex;
   flex-direction:column;
-  width:60%;
+  min-width: 680px;
   padding: 50px 0px;
 
   &__Waku{
@@ -24,22 +24,76 @@
 
   &--shouhin_area{
     resize: none;
-    width: 200px;
+    width: 400px;
     height: 30px;
+
+    resize: none;
+    display: block;
+    padding: 6px 12px;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
   }
+
+  .Waku{
+    margin: 10px 0px;
+  }
+  
 
   &--categroy_area{
     resize: none;
-    width: 200px;
+    width: 300px;
     height: 30px;
+
+    resize: none;
+    display: block;
+    padding: 6px 12px;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+
   }
 
   &--honbun_area{
     resize: none;
     height: 250px;
+
+    display: block;
+    width: 100%;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+
   }
 
 
+}
+
+.Post_Oowaku{
+  display: flex;
+  max-width: 680px;
+}
+
+.Post_Area_waku{
+  width:65%;
+}
+
+.Post_Image_waku {
+  width:35%;
+  height:150px;
+  padding:0px 30px;
+
+  img{
+    height:70%;
+  }
 }
 
 .Post_submit{
@@ -58,6 +112,9 @@
     &--btn{
       display:block;
       cursor: pointer;
+      color: #fff;
+      background-color: #5cb85c;
+      border-color: #4cae4c;
     }
 
 
@@ -91,6 +148,8 @@
   padding: 50px;
 
   &__image{
+
+
 
     img{
       width:Auto;
@@ -171,4 +230,14 @@
     width: 80%;
   }
 
+}
+
+.star-rating{
+  display:flex;
+}
+
+.Kakushi{
+  height:20px;
+  width:30px;
+  margin-left:30px;
 }

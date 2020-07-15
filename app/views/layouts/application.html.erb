@@ -7,9 +7,28 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application'%>
+
+    <script src="/js/jquery.raty.js"></script>
+    <script>
+      $(function(){
+        $('#star4').raty({
+          half: true
+        });
+      });
+      $(function(){
+        $('#star6').raty({
+          readOnly: true,
+          score: 4
+        });
+      });      
+      
+
+    </script>    
+    
   </head>
 
   <body>
+    <%=render 'layouts/notifications'%>
     <%=render 'layouts/header'%>
     <%= yield %>   
     <%=render 'layouts/footer'%>
