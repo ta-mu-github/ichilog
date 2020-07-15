@@ -27,7 +27,7 @@
           //※現在いいね「した」数になっているので修正必要。
           .Infomation__reviewcount
             いいねされた数<br>
-            =Like.where(post_id: @users.id).count            
+            =Like.where(post_id: @users.id).where(post_id: @users.id).count            
 
       .Mypage_List
         .Toukou
@@ -82,7 +82,7 @@
                     = link_to(like_path(p.id), {method: "delete"}) do
                       = icon('fas', 'heart',  class: "Account__btn--icon")
                   - else
-                    = link_to(likes_path(p.id)) do
+                    = link_to(likes_path(p.id), {method: "post"}) do
                       = icon('far', 'heart',  class: "Account__btn--icon")                
 
                   =Like.where(post_id: p.id).count
