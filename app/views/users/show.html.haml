@@ -79,10 +79,10 @@
                 //削除するいいねを”likesテーブルのIDから取得したい！！現在はpostidを取得している。”
                 .Right_iine
                   - if Like.find_by(user_id:current_user.id, post_id: p.id)
-                    = link_to(like_path(p.id), {method: "delete"}) do
+                    = link_to(post_like_path(p.id), {method: "delete"}) do
                       = icon('fas', 'heart',  class: "Account__btn--icon")
                   - else
-                    = link_to(likes_path(p.id), {method: "post"}) do
+                    = link_to(post_likes_path(p.id), {method: "post"}) do
                       = icon('far', 'heart',  class: "Account__btn--icon")                
 
                   =Like.where(post_id: p.id).count

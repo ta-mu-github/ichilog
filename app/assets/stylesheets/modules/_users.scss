@@ -47,11 +47,11 @@
     text-shadow: black 1px 1px 0px, black -1px 1px 0px, black 1px -1px 0px, black -1px -1px 0px;
     
 
-      width: 7ch;           //文字数
+      width: 6.4ch;           //文字数
       overflow: hidden;     //この設定のおかげで文字がどんどん出てくるような表現ができている
       white-space: nowrap;  //文字列が折り返すのを防ぐ  ←これはよくわからない
       border-right: .08em solid white; //キーボードの縦棒。（emが大きくなるほど太くなる）
-      animation: typing 3s steps(10),   //  アニメーション処理「typing」を呼び出している。 *sでタイピング速度。steps(*)で文字が表示される間隔。
+      animation: typing 2.5s steps(10),   //  アニメーション処理「typing」を呼び出している。 *sでタイピング速度。steps(*)で文字が表示される間隔。
       cursor 1s steps(1) infinite;      //  カーソルを点滅させる処理「cursor」を呼び出している。
 
   }

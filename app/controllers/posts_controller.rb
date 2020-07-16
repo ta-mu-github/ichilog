@@ -24,7 +24,7 @@ class PostsController < ApplicationController
   def create
     @posts = Post.new(post_params)
     if @posts.save
-      redirect_to root_path
+      
     else
       redirect_to new_post_path
     end
