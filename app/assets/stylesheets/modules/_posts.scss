@@ -130,6 +130,7 @@
   color: white;
   overflow: scroll;
   
+  
 }
 
 
@@ -145,21 +146,28 @@
 .Shousai_left{
   height: calc(100% - 80px);
   width:30vw;
-  padding: 50px;
+  padding: 30px;
 
   &__image{
-
+    width: 100%;
+    text-align: center;
 
 
     img{
       width:Auto;
-      max-width:450px;
-      height:450px;
+      max-width:300px;
+      height:300px;
     }
   }
   
 }
 
+.Shousai_information{
+  border: 1px solid;
+  border-radius: 20px;
+  padding: 10px;
+  margin-top: 10px;
+}
 
 .Shousai_right{
   width: 70vw;
@@ -171,8 +179,7 @@
   padding: 50px;
   border: 1px solid white;
   overflow: scroll;
-  min-height: calc(100% - 60%);
-  max-height: calc(100% - 60%);
+  min-height: calc(100% - 180px);
 }
 
 .Comments{
@@ -194,12 +201,26 @@
       margin:20px 0px;
       display: flex;
       flex-direction: column;
-      width: 80%;
+      padding: 50px;
     }
 
     textarea{
+    resize: none;
+    height: 250px;
+    display: block;
+    width: 100%;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    }
 
-      height:150px;
+    input{
+      width:100px;
     }
   }
 
@@ -241,3 +262,69 @@
   width:30px;
   margin-left:30px;
 }
+
+
+//投稿ページ（create）
+
+.Create_Container{
+  height:calc(100vh - 80px);
+  width: 100%;
+  background-color: #2626ff;
+  background-image: linear-gradient(135deg, #0ebfee, #2626ff);
+  color: white;
+}
+
+.Create_Waku{
+  text-align:center;
+  height:100%
+}
+
+.Create_Message{
+  height:60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__waku{
+    font-size: 52px;
+    padding:10px 150px;
+    border: 3px solid white;
+    border-radius:30px;
+    background-image: url(/assets/おしゃれ);
+
+    h1{
+    color: white;
+    font-weight: bold;
+    letter-spacing: 0.15em;
+    text-shadow: black 1px 1px 0px, black -1px 1px 0px, black 1px -1px 0px, black -1px -1px 0px
+    }
+  }
+
+  img{
+    height: 150px;
+    width: 150px;
+    
+  }
+
+}
+
+.Create_Share{
+  height:30%;
+  font-size:24px;
+}
+
+.Create_kabu{
+
+  a{
+    font-size: 32px;
+    text-decoration: underline;
+    color:white;
+    text-shadow: black 1px 1px 0px, black -1px 1px 0px, black 1px -1px 0px, black -1px -1px 0px
+  }
+}
+
+.Create_Share{
+
+}
+
+

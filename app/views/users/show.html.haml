@@ -82,7 +82,7 @@
                     = link_to(post_like_path(p.id), {method: "delete"}) do
                       = icon('fas', 'heart',  class: "Account__btn--icon")
                   - else
-                    = link_to(post_likes_path(p.id), {method: "post"}) do
+                    = link_to(post_likes_path(p), {method: "post"}) do
                       = icon('far', 'heart',  class: "Account__btn--icon")                
 
                   =Like.where(post_id: p.id).count

@@ -10,15 +10,20 @@
         .Shousai_left__title
           タイトル：
           =@posts.title
-          .Shousai_left__category
+
+        .Shousai_left__category
           カテゴリ：
           =@posts.category
 
-        .Right_kabu
-          .Right_kabu__date
+        .Shousai_left__category
+          評価：
+          =@posts.rate
+
+        .Shousai_left_datearea
+          .Shousai_left_datearea__date
             更新日時：
             =@posts.updated_at
-          .Right_kabu__info
+          .Shousai_left_datearea__info
             %h2
               編集            
             %h2
@@ -41,7 +46,8 @@
                     .Come_waku__user
                       顔画像    
                     .Come_waku__info
-                      ユーザーネーム     
+                      ユーザーネーム
+                           
 
                   .Come_waku__honbun
                     =comment.text 

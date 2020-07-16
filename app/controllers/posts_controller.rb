@@ -17,6 +17,7 @@ class PostsController < ApplicationController
     @posts = Post.find(params[:id])
     @comment = Comment.new
     @comments = @posts.comments.includes(:user)
+    @users = User.where(id:@posts.user_id)
     
   end
 

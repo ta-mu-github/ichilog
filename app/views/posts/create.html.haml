@@ -1,4 +1,21 @@
-%h1 投稿完了！
-%h2 この投稿を誰かにシェアしませんか？
+.Create_Container
+  .Create_Waku
+    .Create_Message
+      .Create_Message__waku
+        %h1 投稿完了！
+        - if @posts.image.present?
+          =image_tag @posts.image.url
+        - else
+          %img.Review_left__No_image{ src: "/assets/Noimage.png", alt: "logo" } 
+          
+        %img.Review_left__No_image{ src: "/assets/喜ぶ人.png", alt: "logo" }
+        .Create_kabu
+          =link_to "一覧に戻る",root_path
 
-=link_to "一覧に戻る",root_path
+    .Create_Share
+      この投稿を<br>誰かにシェアしますか？
+      %ul.Account
+        %li.Account__btn.Account__btn--twitter
+          = icon('fab', 'twitter',  class: "Account__btn--icon")
+          = link_to 'Twitterでシェアする','#'                           
+    
