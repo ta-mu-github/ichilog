@@ -15,10 +15,10 @@ class PostsController < ApplicationController
   #投稿詳細（GET）
   def show
     @posts = Post.find(params[:id])
+    @post =  Post.includes(:user)
     @comment = Comment.new
-    @comments = @posts.comments.includes(:user)
-    @users = User.where(id:@posts.user_id)
-    
+    @comments = @posts.comments.includes(:user).order("created_at DESC")
+   
   end
 
   #投稿を保存する処理（POST）

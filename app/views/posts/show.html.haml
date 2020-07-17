@@ -19,6 +19,10 @@
           評価：
           =@posts.rate
 
+        .Shousai_left__user_name
+          投稿者：
+          =@posts.user.user_name
+
         .Shousai_left_datearea
           .Shousai_left_datearea__date
             更新日時：
@@ -33,34 +37,47 @@
     .Shousai_right      
       .Shousai__Honbun
         =@posts.content
+      
+      .Shousai__userlist
+        このレビューを他に投稿した人：
+        .Shousai__user
+          -@post.each do |post|
+            -if @posts.title ! post.title
+                         
+              aaaa
+            -else
+              ahaaa
+              =link_to post.user.user_name,user_path(post.user.id)
+              
+          //=@posts.user.user_name
 
-      .Comments
-        .Coment_Waku
+  .Comment_Oowaku
+    .Comments
+      .Comment_toukou    
+        -if current_user        
+          = form_with(model: [@posts,@comment], local: true) do |form|
+            = form.text_area :text, placeholder: "コメントする", rows: "2"
+            = form.submit "SEND"
+        -else
+          %p ※コメントの投稿には新規登録、またはログインが必要です※
+      .Coment_Waku
+        .Coment_Waku--ichiran    
+          %h1.Comment_title コメント一覧：
+          -if @comments
+            -@comments.each do |comment|
+              .Come_waku
+                .Come_waku__userinfo
+                  .Come_waku__user
+                    //%img.Review_left__No_image{ src: "/assets/Noimage.png", size: "100x150", alt: "logo" }
+                    =image_tag comment.user.profile_image, size: "150x200", alt: "画像"
+                  .Come_waku__info
+                    =comment.user.user_name                        
 
-          .Coment_Waku--ichiran    
-            コメント一覧：
-            -if @comments
-              -@comments.each do |comment|
-                .Come_waku
-                  .Come_waku__userinfo
-                    .Come_waku__user
-                      顔画像    
-                    .Come_waku__info
-                      ユーザーネーム
-                           
-
-                  .Come_waku__honbun
+                .Come_waku__honbun
+                  .Come_waku__text
                     =comment.text 
                   .Come_waku__sonota
-            -else
-              ※まだコメントはありません。            
-
-          .Coment_Waku--toukou    
-            -if current_user        
-              = form_with(model: [@posts,@comment], local: true) do |form|
-                = form.text_area :text, placeholder: "コメントする", rows: "2"
-                = form.submit "SEND"
-            -else
-              %p ※コメントの投稿には新規登録、またはログインが必要です※
-          
-          
+                    =comment.created_at                    
+          -else          
+          //%h1.CommentNashi ※まだコメントはありません。
+                        

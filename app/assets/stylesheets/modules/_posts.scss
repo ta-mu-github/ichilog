@@ -124,21 +124,20 @@
 /***投稿詳細画面***/
 .Shousai{
   min-height: calc(100vh - 80px);
-  width: 100vw;
+  
   background-color: #2626ff;
   background-image: linear-gradient(135deg, #0ebfee, #2626ff);
   color: white;
-  overflow: scroll;
   
-  
+  &__userlist{
+    margin:30px;
+  }
+
 }
 
 
 .Shousai_Oowaku{
   display: flex;
-  align-items: center;
-  justify-content: center;
-  height: calc(100vh - 80px);
   width:100%;
 }
 
@@ -146,7 +145,7 @@
 .Shousai_left{
   height: calc(100% - 80px);
   width:30vw;
-  padding: 30px;
+  padding: 50px;
 
   &__image{
     width: 100%;
@@ -155,8 +154,8 @@
 
     img{
       width:Auto;
-      max-width:300px;
-      height:300px;
+      max-width:400px;
+      height:400px;
     }
   }
   
@@ -179,49 +178,46 @@
   padding: 50px;
   border: 1px solid white;
   overflow: scroll;
-  min-height: calc(100% - 180px);
+  min-height: 300px;
 }
 
 .Comments{
-    min-height: calc(100% - 80%);
-    border: 1px solid white;
-    margin: 20px 0px;
+  min-height: calc(100% - 80%);
+  width: 980px;
+}
+
+.Comment_Oowaku{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid white;
+  padding-top: 10px;
 }
 
 .Coment_Waku{
+  
+  display:flex;
+  width: 980px;
 
   &--ichiran{
-    width:100%;
+    width: 100%;
+    max-height: 500px;
+    min-height: 300px;
+    overflow: scroll;
+    border: 1px solid;
+    border-radius: 20px;
+    margin:30px;
+    
+
+    h1{
+      font-size: 22px;
+    }
+
   }
 
   &--toukou{
 
-    form{
-      text-align: center;
-      margin:20px 0px;
-      display: flex;
-      flex-direction: column;
-      padding: 50px;
-    }
-
-    textarea{
-    resize: none;
-    height: 250px;
-    display: block;
-    width: 100%;
-    padding: 6px 12px;
-    font-size: 14px;
-    line-height: 1.42857143;
-    color: #555;
-    background-color: #fff;
-    background-image: none;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    }
-
-    input{
-      width:100px;
-    }
+ 
   }
 
 }
@@ -234,12 +230,26 @@
   display:flex;
 
   &__userinfo{
-    display:flex;
-    border: 1px solid;
-    width: 20%;
+    width:150px;
+    font-size:16px;
+  }
+
+  &__text{
+    height:80%;
+  }
+
+  &__sonota{
+    text-align: right;
+    font-size: 12px;
   }
 
   &__user{
+
+    img{
+      border-radius: 100px;
+      height: 150px;
+      width: 150px;
+    }
 
   }
 
@@ -247,11 +257,68 @@
   }
 
   &__honbun{
-    border: 1px solid;
-    width: 80%;
+  position: relative; /* 三角の位置を固定するために設定 */
+  display: inline-block;
+  width: 600px;
+  margin: 10px 40px 20px; /* 上 左右 下のマージン */
+  padding: 8px 15px; /* ふきだし内の余白 */
+  background: white; /* 背景色 */
+  text-align: left; /* テキストの揃え */
+  border-radius: 15px;
+  color:black;
+  }
+
+  &__honbun::before{
+
+  }
+
+  &__honbun::after{
+    content: '';
+    border: 14px solid transparent;
+    border-top-color: white;
+    position: absolute;
+    top: 30px;
+    left: -10px;
+
   }
 
 }
+
+.Comment_toukou{
+  form{
+    text-align: center;
+  }
+
+  textarea{
+  resize: none;
+  height: 150px;
+  width:100%;
+  display: block;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  }
+
+  input{
+    cursor: pointer;
+    color: #fff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+    width: 200px;
+    padding: 20px;
+    border-radius: 20px;
+    border: 1px solid white;
+    text-align: center;
+    margin-top: 20px;
+    }
+
+}
+
 
 .star-rating{
   display:flex;
@@ -327,4 +394,15 @@
 
 }
 
+.CommentNashi{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+.Comment_title{
+  border: 1px solid white;
+  padding: 15px;
+}
