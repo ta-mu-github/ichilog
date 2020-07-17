@@ -30,10 +30,10 @@
             =Like.where(post_id: @users.id).where(post_id: @users.id).count            
 
       .Mypage_List
-        .Toukou
-          .Toukou__ichiran
-            = icon('fas', 'list',  class: "Account__btn--icon")        
-            = link_to "投稿一覧", new_post_path, class: "Toukou__Review--btn"          
+        -# .Toukou
+        -#   .Toukou__ichiran
+        -#     = icon('fas', 'list',  class: "Account__btn--icon")        
+        -#     = link_to "投稿一覧", new_post_path, class: "Toukou__Review--btn"          
 
         .Toukou
           .Toukou__Review
@@ -102,5 +102,5 @@
                       %h2
                         = link_to "編集", edit_post_path(p.id)          
                       %h2
-                        = link_to "削除", post_path(p.id), method: :delete      
+                        = link_to "削除", post_path(p.id),data: {confirm: "削除します。本当によろしいですか？"}, method: :delete      
                     - else

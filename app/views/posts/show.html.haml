@@ -4,6 +4,7 @@
       .Shousai_left__image
         - if @posts.image.present?
           =image_tag @posts.image.url, alt: "画像"
+          =image_tag @posts.user.profile_image, alt: "画像",class:"Shousai_left_profile"
         - else
           %img.Review_left__No_image{ src: "/assets/Noimage.png", alt: "logo" } 
       .Shousai_information    
@@ -42,12 +43,22 @@
         このレビューを他に投稿した人：
         .Shousai__user
           -@post.each do |post|
-            -if @posts.title ! post.title
-                         
-              aaaa
+            -if @posts.title == post.title
+              -if @posts.user_id == post.user_id      #投稿したのが自分の場合は除外
+                
+              -else
+                .Shousai__user_icon
+                  = link_to user_path(post.user.id), class: "User_icon" do
+                    =image_tag post.user.profile_image, size: "150x200", alt: "画像"
+                  =link_to post.user.user_name,user_path(post.user.id)
+
+                  .Shousai__honbun_sukosi
+                    =post.content
+
+                  =link_to "投稿をみる",post_path(post.id),class: "Shousai__toukoucheck"  
+                                     
             -else
-              ahaaa
-              =link_to post.user.user_name,user_path(post.user.id)
+              
               
           //=@posts.user.user_name
 

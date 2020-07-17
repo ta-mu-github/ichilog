@@ -9,8 +9,11 @@
           %img.Review_left__No_image{ src: "/assets/Noimage.png", alt: "logo" } 
           
         %img.Review_left__No_image{ src: "/assets/喜ぶ人.png", alt: "logo" }
-        .Create_kabu
-          =link_to "一覧に戻る",root_path
+        .Create_Dotti
+          .Create_Dotti__shousai
+            =link_to "投稿詳細画面を開く",post_path(@posts.id)
+          .Create_Dotti__ichiran
+            =link_to "一覧に戻る",root_path
 
     .Create_Share
       この投稿を<br>誰かにシェアしますか？
