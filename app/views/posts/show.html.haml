@@ -4,7 +4,6 @@
       .Shousai_left__image
         - if @posts.image.present?
           =image_tag @posts.image.url, alt: "画像"
-          =image_tag @posts.user.profile_image, alt: "画像",class:"Shousai_left_profile"
         - else
           %img.Review_left__No_image{ src: "/assets/Noimage.png", alt: "logo" } 
       .Shousai_information    
@@ -36,8 +35,11 @@
        
 
     .Shousai_right      
-      .Shousai__Honbun
-        =@posts.content
+      .Shousai_Honbun_User
+        .Shousai_Honbun_User__Honbun
+          =@posts.content
+      =image_tag @posts.user.profile_image, alt: "画像",class:"Shousai_right_profile"
+        
       
       .Shousai__userlist
         このレビューを他に投稿した人：
