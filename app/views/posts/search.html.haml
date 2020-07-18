@@ -42,7 +42,7 @@
                   .Right_comment
                     .Right_comment__title
                       =image_tag p.image.url, size: "150x200", alt: "画像"
-                      =link_to p.title,search_posts_path(p.title)
+                      =link_to p.title,search_posts_path(keyword: p.title)
                       
                     -# = link_to post_path(p.id)  do
                     -#   = icon('far', 'comment-dots',  class: "Account__btn--icon")

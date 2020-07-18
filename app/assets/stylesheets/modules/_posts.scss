@@ -233,7 +233,7 @@
 .Shousai__Honbun{
   padding: 50px;
   border: 1px solid white;
-  overflow: scroll;
+  overflow: auto;
   min-height: 300px;
 }
 
@@ -259,7 +259,7 @@
     width: 100%;
     max-height: 500px;
     min-height: 300px;
-    overflow: scroll;
+    overflow: auto;
     border: 1px solid;
     border-radius: 20px;
     margin:30px;

@@ -52,7 +52,7 @@ class PostsController < ApplicationController
 
   #投稿を検索する処理（GET）
   def search
-    @posts = Post.search(params[:keyword])
+    @posts = Post.search(params[:keyword]).order("created_at DESC")
   end
 
 
