@@ -1,0 +1,35 @@
+.contents.row
+  .container
+    .Touroku_left
+      %h2 新規ユーザ登録
+      = form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f|
+        = devise_error_messages!
+        .field
+          = f.label :ユーザ名
+          %br/
+          = f.text_field :user_name
+        .field
+          = f.label :メールアドレス
+          %br/
+          = f.email_field :email
+        .field
+          = f.label :パスワード
+          - if @validatable
+            %em
+              (#{@minimum_password_length} characters minimum)
+          %br/
+          = f.password_field :password, autocomplete: "off"
+        .field
+          = f.label :パスワード（2回目）
+          %br/
+          = f.password_field :password_confirmation, autocomplete: "off"
+        .actions
+          = f.submit "登録する"
+    .Touroku_right
+      %ul.Account
+        %li.Account__btn.Account__btn--twitter
+          = icon('fab', 'twitter',  class: "Account__btn--icon")
+          = link_to 'Twitterで登録','#'
+        %li.Account__btn.Account__btn--google
+          = icon('fab', 'google',  class: "Account__btn--icon")
+          = link_to 'googleで登録'

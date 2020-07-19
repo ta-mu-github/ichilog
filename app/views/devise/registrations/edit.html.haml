@@ -1,0 +1,43 @@
+%h2
+  Edit #{resource_name.to_s.humanize}
+= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+  = render "devise/shared/error_messages", resource: resource
+  .field
+    = f.label :ユーザ名
+    %br/
+    = f.text_field :user_name, autofocus: true, autocomplete: "user_name"
+  .field
+    = f.label :メールアドレス
+    %br/
+    = f.email_field :email, autofocus: true, autocomplete: "email"
+  .field
+    = f.label :プロフィール画像
+    %br/
+    = f.file_field :profile_imgae, autofocus: true, autocomplete: "profile_imgae"
+  - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+    %div
+      Currently waiting confirmation for: #{resource.unconfirmed_email}
+  .field
+    = f.label :新しいパスワード
+    %i (パスワードの変更が不要の場合、空欄でも可。)
+    %br/
+    = f.password_field :password, autocomplete: "new-password"
+    - if @minimum_password_length
+      %br/
+      %em
+        = @minimum_password_length
+        characters minimum
+  .field
+    = f.label :新しいパスワード（2回目）
+    %br/
+    = f.password_field :password_confirmation, autocomplete: "new-password"
+  .field
+    = f.label :現在のパスワード
+    %i
+    %br/
+    = f.password_field :current_password, autocomplete: "current-password"
+  .actions
+    = f.submit "更新する"
+%h3 アカウント削除
+%p= button_to "アカウントを削除する", registration_path(resource_name), data: { confirm: "本当に削除してもよろしいですか?" }, method: :delete
+= link_to "Back", :back

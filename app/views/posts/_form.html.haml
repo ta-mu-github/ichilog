@@ -16,9 +16,9 @@
               = f.text_field :rate, autofocus: true, class: 'Kakushi'
 
         .Post_Image_waku      
-          %img.Review_left__No_image{ src: "/assets/Noimage.png", alt: "logo" }
-          = f.label :image, class: 'Main__image' do            
-            = f.file_field :image, class: 'Main__Hidden'
+          %img.Review_left__No_image{ src: "/assets/Noimage.png", alt: "logo",id: "img1"  }
+          = f.label :image, class: 'Main__image'  do            
+            = f.file_field :image, class: 'Main__Hidden',id:"myfile"
 
       .Waku
         = f.text_area :content, class:"Post_Area--honbun_area", placeholder: '気に入ったこと/気に入らなかったことは何ですか？この製品をどのように使いましたか？'              
@@ -26,4 +26,30 @@
       .Post_submit
         %input.Post_submit__toukou.Post_submit__toukou--btn{value: "投稿する", type:"submit"}
 
-        
+
+
+:javascript
+  $(function(){
+    $('#myfile').change(function(e){
+      //ファイルオブジェクトを取得する
+      var file = e.target.files[0];
+      var reader = new FileReader();
+    
+      //画像でない場合は処理終了
+      if(file.type.indexOf("image") < 0){
+        alert("画像ファイルを指定してください。");
+        return false;
+      }
+    
+      //アップロードした画像を設定する
+      reader.onload = (function(file){
+        return function(e){
+          $("#img1").attr("src", e.target.result);
+          $("#img1").attr("title", file.name);
+        };
+      })(file);
+      reader.readAsDataURL(file);
+    
+    });
+  });
+
