@@ -42,8 +42,7 @@
     .Shousai_right      
       .Shousai_Honbun_User
         .Shousai_Honbun_User__Honbun
-          
-          =@posts.content
+          =simple_format(h(@posts.content))       #「simple_format」改行ありで表示することが可能なメソッド
         
       
       .Shousai__userlist
