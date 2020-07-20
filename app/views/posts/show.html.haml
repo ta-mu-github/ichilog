@@ -1,44 +1,49 @@
 .Shousai
   .Shousai_Oowaku
     .Shousai_left
+      .Shousai_left__title
+        =@posts.title    
       .Shousai_left__image
         - if @posts.image.present?
           =image_tag @posts.image.url, alt: "画像"
         - else
           %img.Review_left__No_image{ src: "/assets/Noimage.png", alt: "logo" } 
       .Shousai_information    
-        .Shousai_left__title
-          タイトル：
-          =@posts.title
+        .Shousai_category_userjyouhou
+          .Shousai_left__hyouka
+            評価：
+            =@posts.rate
 
-        .Shousai_left__category
-          カテゴリ：
-          =@posts.category
+            .Shousai_left__category
+              カテゴリ：
+              =@posts.category
 
-        .Shousai_left__category
-          評価：
-          =@posts.rate
+          .Shousai_left_user_jyouhou
+            .Shousai_left__user_image
+              =image_tag @posts.user.profile_image, alt: "画像"        
+            .Shousai_left__user_name
+              投稿者：<br>
+              =@posts.user.user_name
 
-        .Shousai_left__user_name
-          投稿者：
-          =@posts.user.user_name
+
 
         .Shousai_left_datearea
           .Shousai_left_datearea__date
             更新日時：
             =@posts.updated_at
           .Shousai_left_datearea__info
-            %h2
-              編集            
-            %h2
-              削除          
-       
+            - if user_signed_in? && current_user.id == @posts.user_id
+              %h2
+                編集            
+              %h2
+                削除          
+            - else
 
     .Shousai_right      
       .Shousai_Honbun_User
         .Shousai_Honbun_User__Honbun
+          
           =@posts.content
-      =image_tag @posts.user.profile_image, alt: "画像",class:"Shousai_right_profile"
         
       
       .Shousai__userlist

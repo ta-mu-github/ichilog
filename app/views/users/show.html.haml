@@ -24,7 +24,6 @@
             投稿数<br>
             =Post.where(user_id: @users.id).count
 
-          //※現在いいね「した」数になっているので修正必要。
           .Infomation__reviewcount
             いいねされた数<br>
             =Like.where(post_id: Post.where(user_id: @users.id)).count            
@@ -38,15 +37,15 @@
         -#     = icon('fas', 'list',  class: "Account__btn--icon")        
         -#     = link_to "投稿一覧", new_post_path, class: "Toukou__Review--btn"          
 
-        .Toukou
-          .Toukou__Review
-            = icon('fas', 'pen-nib',  class: "Account__btn--icon")        
-            = link_to "レビューを投稿する", new_post_path, class: "Toukou__Review--btn"        
+        -# .Toukou
+        -#   .Toukou__Review
+        -#     = icon('fas', 'pen-nib',  class: "Account__btn--icon")        
+        -#     = link_to "レビューを投稿する", new_post_path, class: "Toukou__Review--btn"        
 
-        .Toukou
-          .Toukou__Review
-            = icon('far', 'user',  class: "Account__btn--icon")        
-            = link_to "プロフィールを編集する", edit_user_registration_path, class: "Toukou__Review--btn"          
+        -# .Toukou
+        -#   .Toukou__Review
+        -#     = icon('far', 'user',  class: "Account__btn--icon")        
+        -#     = link_to "プロフィールを編集する", edit_user_registration_path, class: "Toukou__Review--btn"          
           
     .Mypage_Main__right                  
       %h1 タイムライン
@@ -79,7 +78,7 @@
               
 
               .Right_kabu
-                //削除するいいねを”likesテーブルのIDから取得したい！！現在はpostidを取得している。”
+                //いいね　カレントユーザだと非ログイン時にエラーが出るし、カレントにしとかないと無限にボタン押せてしまう問題”
                 .Right_iine
                   - if Like.find_by(user_id:current_user.id, post_id: p.id)
                     = link_to(post_like_path(p.id), {method: "delete"}) do

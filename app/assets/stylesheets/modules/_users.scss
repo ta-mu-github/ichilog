@@ -466,11 +466,15 @@
 }
 
 .Touroku_left{
-  width: calc(100% - 200px);  
+  width: calc(100% - 300px);  
 }
 
 .Touroku_right{
   width: 200px;  
+
+  ul{
+    padding-top:80px;
+  }
 }
 
 .Account{

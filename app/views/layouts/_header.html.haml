@@ -3,23 +3,42 @@
     = link_to "Ichilog", root_path
 
   .Header_middle
-    - if user_signed_in?
+    - if user_signed_in?          
       .Search
         =form_with url:search_posts_path, local:true,method: :get,class: "Search__form" do |form|
-          = icon('fas', 'search',  class: "Account__btn--icon")        
-          =form.text_field :keyword, placeholder: "投稿を検索する"
-          =form.submit "検索"  
-          
-      .Search__user_ichiran
-        =link_to "ユーザ一覧",search_users_path
-        -# =form_with url:search_users_path, local:true,method: :get,class: "Search__form" do |form|
-        -#   = icon('fas', 'search',  class: "Account__btn--icon")        
-        -#   =form.text_field :keyword, placeholder: "ユーザ検索"
-        -#   =form.submit "検索"            
-    -else
+          //= icon('fas', 'search',  class: "Account__btn--icon")        
+          =form.text_field :keyword, placeholder: "商品を検索する"
+          =form.submit "検索"        
+    -# =form_with url:search_users_path, local:true,method: :get,class: "Search__form" do |form|
+    -#   = icon('fas', 'search',  class: "Account__btn--icon")        
+    -#   =form.text_field :keyword, placeholder: "ユーザ検索"
+    -#   =form.submit "検索"            
+    //-else
 
   .Header_right    
     - if user_signed_in?
-      = link_to "ログアウト", destroy_user_session_path, class: "Header_right__loginlogout Header_right__loginlogout--logout", method: :delete
-      = current_user.user_name
+      
+        
+      //= link_to "ログアウト", destroy_user_session_path, class: "Header_right__loginlogout Header_right__loginlogout--logout", method: :delete
+
+      .Search__user_ichiran
+        =link_to "ユーザ一覧",search_users_path
+      .Header_right__user_jyouhou  
+        .Header_right__user_box        
+          = image_tag current_user.profile_image,class:"Header_right__profile_image"
+          = current_user.user_name
+        .Header_right__user_box_open  
+          .User_box
+            .User_box__waku
+            = icon('fas', 'pen-nib')        
+            = link_to "レビューを投稿する", new_post_path       
+
+          .User_box
+            .User_box__waku
+              = icon('far', 'user')        
+              = link_to "プロフィールを編集する", edit_user_registration_path
+          .User_box
+            .User_box__waku
+            = icon('fas', 'sign-out-alt')     
+            = link_to "ログアウト", destroy_user_session_path, method: :delete
     -else
