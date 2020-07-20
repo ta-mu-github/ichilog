@@ -64,12 +64,21 @@
   }
 
   .Search{
-
-
       height: 32px;
       border: none;
       border-radius: 4px;
       font-size: 1.2rem;
       -webkit-appearance: textfield;
+
+      &__user_ichiran{
+        
+        padding: 0px 30px;
+        a{
+          color:black;
+        }
+      }
+    
+
   }
+
 }

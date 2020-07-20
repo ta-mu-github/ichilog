@@ -22,6 +22,10 @@ class UsersController < ApplicationController
 
   end
 
+  #投稿を検索する処理（GET）
+  def search
+    @users = User.search(params[:keyword])
+  end
 
 
   #=========================プライベートメソッド=========================#
