@@ -15,7 +15,7 @@
 （トップページのタイトルはタイピング風に表示されるようにしたり、画像にカーソルを合わせた時画像が拡大されるようにしたりなど）
 
 ・使用技術(開発環境)：
-Ruby on Rails、MySQL
+Ruby on Rails、jQuery、MySQL
 
 ・課題や今後実装したい機能：
 レスポンシブデザインの導入
@@ -28,12 +28,12 @@ AmazonAPIの導入
 
 |Column|Type|Options|
 |------|----|-------|
-|id|integer|null: false, foreign_key: true|
-|user_name|integer|null: false, foreign_key: true|
-|email|integer|null: false, foreign_key: true|
-|password|integer|null: false, foreign_key: true|
-|profile_image|integer|null: false, foreign_key: true|
-|self_introduction|integer|null: false, foreign_key: true|
+|id|integer|null: false|
+|user_name|string|null: false|
+|email|string|null: false|
+|password|string|null: false|
+|profile_image|string||
+|self_introduction|string||
 
 ### Association
 - has_many :posts
@@ -45,13 +45,13 @@ AmazonAPIの導入
 
 |Column|Type|Options|
 |------|----|-------|
-|id|integer|null: false, foreign_key: true|
-|title|integer|null: false, foreign_key: true|
-|category|integer|null: false, foreign_key: true|
-|content|integer|null: false, foreign_key: true|
-|image|integer|null: false, foreign_key: true|
-|user_id|integer|null: false, foreign_key: true|
-|rate|integer|null: false, foreign_key: true|
+|id|integer|null: false|
+|title|string|null: false|
+|category|string|null: false|
+|content|string|null: false|
+|image|string|null: false|
+|user_id|reference|null: false, foreign_key: true: { to_table: :users }|
+|rate|string|null: false|
 
 ### Association
 - belongs_to :user
@@ -62,7 +62,7 @@ AmazonAPIの導入
 
 |Column|Type|Options|
 |------|----|-------|
-|id|integer|null: false, foreign_key: true|
+|id|integer|null: false|
 |user_id|reference|null: false, foreign_key: true|
 |post_id|reference|null: false, foreign_key: true|
 
@@ -75,8 +75,8 @@ AmazonAPIの導入
 
 |Column|Type|Options|
 |------|----|-------|
-|id|integer|null: false, foreign_key: true|
-|text|integer|null: false, foreign_key: true|
+|id|integer|null: false|
+|text|string|null: false|
 |user_id|reference|null: false, foreign_key: true|
 |post_id|reference|null: false, foreign_key: true|
 
