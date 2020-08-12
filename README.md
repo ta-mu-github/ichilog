@@ -1,6 +1,5 @@
-アプリ名：
-「Ichilog」
-トップページ
+アプリ名：「Ichilog」
+
 <img width="1440" alt="スクリーンショット 2020-08-11 13 39 05" src="https://user-images.githubusercontent.com/64738234/89857849-1fbb2a00-dbd8-11ea-9136-730184d23a0d.png">
 
 
