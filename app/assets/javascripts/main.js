@@ -19,5 +19,9 @@ $(function() {
     
   });
 
+    $('#img1').click(function(){
+    $('#myfile').click();    
+  })
+
 
   });

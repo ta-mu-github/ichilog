@@ -25,7 +25,11 @@
         =link_to "ユーザ一覧",search_users_path
       .Header_right__user_jyouhou  
         .Header_right__user_box        
-          = image_tag current_user.profile_image,class:"Header_right__profile_image"
+          -if current_user.profile_image.present?
+            = image_tag current_user.profile_image.url,class:"Header_right__profile_image"
+          -else
+            .Image_icon
+              no image 
           = current_user.user_name
         .Header_right__user_box_open  
           .User_box

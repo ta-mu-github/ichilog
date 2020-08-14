@@ -1,30 +1,56 @@
-.contents.row
-  .container
-    .Touroku_left
-      %h2 新規ユーザ登録
-      = form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f|
-        = devise_error_messages!
-        .field
-          = f.label :ユーザ名
-          %br/
-          = f.text_field :user_name
-        .field
-          = f.label :メールアドレス
-          %br/
-          = f.email_field :email
-        .field
-          = f.label :パスワード
-          - if @validatable
-            %em
-              (#{@minimum_password_length} characters minimum)
-          %br/
-          = f.password_field :password, autocomplete: "off"
-        .field
-          = f.label :パスワード（2回目）
-          %br/
-          = f.password_field :password_confirmation, autocomplete: "off"
-        .actions
-          = f.submit "登録する"
+.Signup_wrapper
+  .Signup_wrapper__container
+    = devise_error_messages!
+    .Signup_wrapper__title
+      %h1 新規ユーザ登録
+
+
+    = form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f|
+
+      .Signup_wrapper__container__field
+        %ul.Signup_wrapper__container__field__label
+          %li.Signup_wrapper__container__field__label__required_item 必須
+          %li.Signup_wrapper__container__field__label__item ユーザ名
+        = f.text_field :user_name
+        
+      .Signup_wrapper__container__field
+        %ul.Signup_wrapper__container__field__label
+          %li.Signup_wrapper__container__field__label__required_item 必須
+          %li.Signup_wrapper__container__field__label__item メールアドレス
+        = f.email_field :email
+
+      .Signup_wrapper__container__field
+        %ul.Signup_wrapper__container__field__label
+          %li.Signup_wrapper__container__field__label__required_item 必須
+          %li.Signup_wrapper__container__field__label__item パスワード
+        - if @validatable
+          %em
+            (#{@minimum_password_length} characters minimum)
+        %br/
+        = f.password_field :password, autocomplete: "off"
+      .Signup_wrapper__container__field
+        %ul.Signup_wrapper__container__field__label
+          %li.Signup_wrapper__container__field__label__required_item 必須
+          %li.Signup_wrapper__container__field__label__item パスワード（確認）
+        = f.password_field :password_confirmation, autocomplete: "off"
+
+      .Signup_wrapper__container__field
+        .Signup_wrapper__container__field__image
+        .Signup_wrapper__container__field__image__image_waku      
+          %img.Signup_wrapper__container__field__image__image_waku__image{ src: "/assets/Noimage.png", alt: "logo",id: "img1"  }
+          = f.label :profile_image do            
+            = f.file_field :profile_image,id:"myfile"          
+          <br>
+          プロフィール画像
+        
+        -# = f.file_field :profile_image, autofocus: true, autocomplete: "profile_imgae"
+
+        .Signup_wrapper__container__field__selfintro
+          = f.text_field :self_introduction, placeholder:"自己紹介"
+
+      .Signup_wrapper__container__submit
+        = f.submit "登録する"          
+
     .Touroku_right
       %ul.Account
         %li.Account__btn.Account__btn--twitter

@@ -27,6 +27,8 @@ class UsersController < ApplicationController
     @users = User.search(params[:keyword])
   end
 
+  
+
 
   #=========================プライベートメソッド=========================#
   
