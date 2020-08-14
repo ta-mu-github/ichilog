@@ -11,8 +11,8 @@
 ・本番環境：<br>
 https://ichilog.herokuapp.com/
 <br>
-テストアカウント:
-メールアドレス：test@test.co.jp
+テスト用アカウント:：<br>
+メールアドレス：test@test.co.jp：<br>
 パスワード：Test123
 
 
