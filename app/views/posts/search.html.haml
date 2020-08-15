@@ -8,8 +8,10 @@
           .Review
             .Review_left
               .Review_left__image.Review_left__image--search_image
-                =image_tag p.image.url, size: "150x200", alt: "画像"
-                =link_to p.title,search_posts_path(keyword: p.title)
+              - if p.image.present?
+                =link_to image_tag(src= p.image.url, alt: "logo"),search_posts_path(keyword: p.title)                      
+              - else
+                =link_to image_tag(src= "/assets/Noimage.png", alt: "logo"),search_posts_path(keyword: p.title)
 
             .Review_right
               .Title_category 
