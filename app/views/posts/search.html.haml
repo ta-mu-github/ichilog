@@ -38,7 +38,7 @@
                     .Right_comment__title
                       - if p.user.profile_image.present?
                         = link_to user_path(p.user.id)  do
-                          =image_tag p.user.profile_image, size: "150x200", alt: "画像"
+                          =image_tag p.user.profile_image.url, size: "150x200", alt: "画像"
                           =link_to p.user.user_name, user_path(p.user.id)
                       - else
                         = link_to post_path(p.id)  do                
