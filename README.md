@@ -12,7 +12,7 @@
 https://ichilog.herokuapp.com/
 <br>
 テスト用アカウント:：<br>
-メールアドレス：test@test.co.jp<br>
+メールアドレス：testuser@test.co.jp<br>
 パスワード：Test123
 
 
