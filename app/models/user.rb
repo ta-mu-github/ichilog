@@ -6,6 +6,8 @@ class User < ApplicationRecord
   has_many :comments #コメントテーブルとのアソシエーション
   has_many :likes    #いいねテーブルとのアソシエーション
 
+  mount_uploader :profile_image, ImageUploader
+
   def self.search(search)
     if search
       User.where(['user_name LIKE ?', "%#{search}%"])

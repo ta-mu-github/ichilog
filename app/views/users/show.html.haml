@@ -7,7 +7,7 @@
           .Profile_waku__image
             - if @users.profile_image.present?          
               = link_to "#", class: "Account__btn Account__btn--User" do
-                =image_tag @users.profile_image, size: "150x200", alt: "画像"
+                =image_tag @users.profile_image.url, size: "150x200", alt: "画像"
             -else
               = link_to "#", class: "Account__btn Account__btn--User" do
                 %img.Review_left__No_image{ src: "/assets/Noimage.png", size: "150x200", alt: "logo" }  
@@ -56,7 +56,7 @@
               .Review_left__image
                 - if p.image.present?
                   = link_to post_path(p.id)  do
-                    =image_tag p.image.url, size: "150x200", alt: "画像"
+                    =image_tag p.image, size: "150x200", alt: "画像"
                 - else
                   = link_to post_path(p.id)  do                
                     %img.Review_left__No_image{ src: "/assets/Noimage.png", size: "150x200", alt: "logo" }  
