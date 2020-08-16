@@ -2,9 +2,7 @@
 
 class ApplicationController < ActionController::Base
    before_action :configure_permitted_parameters, if: :devise_controller?
-   
-  # app/uploaders/image_uploader.rb
-  
+     
   def new
     # super
     # binding.pry
@@ -14,7 +12,8 @@ class ApplicationController < ActionController::Base
   def create
     # super
     # binding.pry
-    # User.create(profile_image: '/assets/カービィ.jpg')    
+    # User.create(profile_image: '/assets/カービィ.jpg')  
+
   end
 
 

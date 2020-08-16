@@ -1,12 +1,20 @@
 Rails.application.routes.draw do
-  devise_for :users
+
+  devise_for :users, only: [:registrations,:passwords]
+  devise_for :users, controllers: {
+    sessions: 'users/sessions'
+  }
+
+
   root to: 'users#index'
 
-  resources :users do
+  resources :users, only: [:index, :show] do
     collection do
       get 'search'
     end
   end
+
+
 
   resources :posts do
     resources :comments, only: :create

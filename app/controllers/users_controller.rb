@@ -12,6 +12,7 @@ class UsersController < ApplicationController
 
   #トップページ(GET)
   def index
+    @user = User.new
     if user_signed_in?
       redirect_to controller: 'users', action: 'show', id: current_user.id
     end
@@ -27,6 +28,7 @@ class UsersController < ApplicationController
     @users = User.search(params[:keyword])
   end
 
+  
   
 
 
