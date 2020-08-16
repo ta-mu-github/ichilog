@@ -1,21 +1,20 @@
 .Signin_wrapper{
-  height: calc(100vh - 80px);
-  background-color:#2626ff;
-  background-image:linear-gradient(135deg,#0ebfee,#2626ff);
-  color:black;
-  display: flex;
-  justify-content: center;
-  align-items:center;
+  position: absolute;
+  left: 400px;
+  top: 130px;
+  height: 600px;
+  width: 650px;
+
+  display:none;
 
   &__container{
-    margin:10px;
     border: 1px solid black;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     height: 60%;
-    width: 620px;
+    width: 100%;
     -webkit-border-radius: 8px;
     -webkit-box-shadow: rgba(181, 181, 181, 0.278431) 0px 0px 6px 3px;
     background-color: white;
@@ -29,6 +28,22 @@
       font-size: 24px;
       color: gray;
     }
+
+    &__close_btn{
+      text-align: center;
+      position: absolute;
+      top: 10px;
+      z-index: 2;
+      width: 50px;
+      height: 50px;
+      font-size: 32px;
+      color: gray;
+      right: 30px;
+      border: 1px solid gray;
+      cursor:pointer;
+    }
+  
+
 
     &__field
     {

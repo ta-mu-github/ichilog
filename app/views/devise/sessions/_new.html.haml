@@ -1,6 +1,9 @@
 .Signin_wrapper
+
   .Signin_wrapper__container
     %h2 ログイン
+    .Signin_wrapper__container__close_btn
+      ×    
 
     = form_with model: @user, url: user_session_path, id: 'new_user', class: 'new_user', local: true do |f|
 
