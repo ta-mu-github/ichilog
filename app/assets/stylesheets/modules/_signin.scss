@@ -21,7 +21,7 @@
     -webkit-border-radius: 8px;
     -webkit-box-shadow: rgba(181, 181, 181, 0.278431) 0px 0px 6px 3px;
     background-color: white;
-    overflow: scroll;
+    overflow: auto;
     background-image: url(/assets/modal.jpg);
     background-size: cover;
     display: flex;
@@ -33,6 +33,7 @@
 
 
       h2{
+        text-align:center;
         font-weight: 600;
         padding: 10px;
         font-size: 24px;
