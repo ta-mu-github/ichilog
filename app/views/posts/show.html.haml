@@ -20,11 +20,10 @@
 
           .Shousai_left_user_jyouhou
             .Shousai_left__user_image
-              - if @posts.image.present?
-                =image_tag @posts.user.profile_image.url, alt: "画像"        
+              - if @posts.user.profile_image.present?
+                =link_to image_tag(@posts.user.profile_image.url, alt: "画像"), user_path(@posts.user_id)        
               - else
-                %img.Review_left__No_image{ src: "/assets/Noimage.png", alt: "logo" }               
-              -# =image_tag @posts.user.profile_image.url, alt: "画像"        
+                =link_to image_tag("/assets/Noimage.png", alt: "logo"), user_path(@posts.user_id),class:"Review_left__No_image"       
             .Shousai_left__user_name
               投稿者：<br>
               =@posts.user.user_name
