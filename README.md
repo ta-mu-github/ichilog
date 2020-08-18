@@ -1,5 +1,5 @@
-アプリ名：<br>
-「Ichilog」
+## アプリ名：<br>
+# 「Ichilog」
 
 ![top](https://user-images.githubusercontent.com/64738234/90467075-3ae4e700-e14e-11ea-9eed-0c3dc9e1782d.gif)
 
@@ -96,8 +96,9 @@ AmazonAPIの導入
 
 
 
+### トップページ
+![ダウンロード](https://user-images.githubusercontent.com/64738234/90467629-a4192a00-e14f-11ea-8434-0a3c49a0d123.gif)
 
-
-投稿一覧画面
+### 投稿一覧画面
 <img width="1440" alt="スクリーンショット 2020-08-11 13 41 31" src="https://user-images.githubusercontent.com/64738234/89857950-627d0200-dbd8-11ea-9fd7-f9adbe894e36.png">
 
