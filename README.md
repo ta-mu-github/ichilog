@@ -1,7 +1,7 @@
 アプリ名：
 # 「Ichilog」
 
-![top](https://user-images.githubusercontent.com/64738234/90467075-3ae4e700-e14e-11ea-9eed-0c3dc9e1782d.gif)
+<img width="1440" alt="スクリーンショット 2020-08-18 12 45 00" src="https://user-images.githubusercontent.com/64738234/90468067-acbe3000-e150-11ea-981e-14244d4787a4.png">
 
 
 
