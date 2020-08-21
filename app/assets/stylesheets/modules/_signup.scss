@@ -1,108 +1,147 @@
-.Signup_wrapper{
+.Signup{
+  background-color: rgba(0, 0, 0, 0.6);
   height: calc(100vh - 80px);
-  background-color:#2626ff;
-  background-image:linear-gradient(135deg,#0ebfee,#2626ff);
-  color:black;
-  display: flex;
-  justify-content: center;
-  align-items:center;
+  width: 100vw;
+  background-blend-mode: lighten;
+  background-image: linear-gradient(135deg, #0ebfee, #2626ff);
+  color: black;
+  background-image: url(/assets/日記を書く人.jpg);
+  background-size: cover;
 
-  &__container{
-    margin:10px;
-    border: 1px solid black;
+
+
+  &__wrapper{
+    position:absolute;
+    top: 8%;
+    left: 28%;
+
+    color:black;
     display: flex;
     justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: 95%;
-    width: 620px;
-    -webkit-border-radius: 8px;
-    -webkit-box-shadow: rgba(181, 181, 181, 0.278431) 0px 0px 6px 3px;
-    background-color: white;
-    overflow:auto;
-    background-image: url(/assets/modal.jpg);
-    background-size: cover;
-    background-position: center;
-
-    h1{
-      font-weight: 600;
-      padding: 10px;
-      font-size: 24px;
-      color: gray;
-    }
-
-    h2{
-      color:red;
-      font-size:16px;
-    }
-
-    &__field
-    {
-      border-top: 1px solid gray;
-      padding: 10px;
-      margin: 10px;
-      display: flex;
-
-      &__label{
-        display:flex;
-        width:200px;
-  
-        &__required_item{
-          background-color: red;
-          color: white;
-          padding: 5px;
-          border-radius: 5px;
-          margin-right:10px;
-        }
-
-
-  
-      }
-  
-      &__image{
-
-        &__image_waku{
-          width:200px;
-          img{
-            height:80px;
-            width:80px;
-          }
+    align-items:center;
     
-          input{
-              display:none;
+
+    &__container{
+      margin:10px;
+      border: 1px solid black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 95%;
+      width: 620px;
+      -webkit-border-radius: 8px;
+      -webkit-box-shadow: rgba(181, 181, 181, 0.278431) 0px 0px 6px 3px;
+      background-color: white;
+      overflow:auto;
+      background-image: url(/assets/modal.jpg);
+      background-size: cover;
+      background-position: center;
+
+      h1{
+        font-weight: 600;
+        padding: 10px;
+        font-size: 24px;
+        color: gray;
+      }
+
+      h2{
+        color:red;
+        font-size:16px;
+      }
+
+      &__field
+      {
+        border-top: 1px solid gray;
+        padding: 10px;
+        margin: 10px;
+        display: flex;
+
+        &__label{
+          display:flex;
+          width:200px;
+    
+          &__required_item{
+            background-color: red;
+            color: white;
+            padding: 5px;
+            border-radius: 5px;
+            margin-right:10px;
           }
 
-          &__image{
-            border: 1px solid;
+
+    
+        }
+    
+        &__image{
+
+          &__image_waku{
+            width:200px;
+            img{
+              height:80px;
+              width:80px;
             }
-  
-  
+      
+            input{
+                display:none;
+            }
+
+            &__image{
+              border: 1px solid;
+              }
+    
+    
+          }
+
+    
+    
+
+
         }
 
-  
-  
-
+      &__selfintro{
+        input{
+          height: 100px;
+        }
+      }  
 
       }
 
-    &__selfintro{
-      input{
-        height: 100px;
+
+
+      &__submit{
+        border-top: 1px solid gray;
+        padding: 10px;
+        margin: 10px;
+        text-align:center;
       }
-    }  
 
     }
 
 
+    &__etc{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding:20px;
 
-    &__submit{
-      border-top: 1px solid gray;
-      padding: 10px;
-      margin: 10px;
-      text-align:center;
+      a{
+        color:gray;
+      }
     }
 
   }
 }
-
+.Signup::before{
+  /* 透過した黒を上から重ねるイメージ */
+  background-color: rgba(0,0,0,0.4);
+  /* 自由に位置指定 */
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  content: ' ';
+}
 
