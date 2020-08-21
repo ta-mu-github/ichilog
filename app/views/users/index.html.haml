@@ -10,14 +10,12 @@
 
       .Account_touroku
         .Login_form
-          -# = link_to "ログインする", new_user_session_path, class: "Login_form__login Login_form__login--kokosaito", id: "Login-modal"
-          .Login_form__login.Login_form__login--kokosaito{id: "Login-modal"}
-            ログインする
+          = link_to "ログインする", new_user_session_path, class: "Login_form__login Login_form__login--kokosaito", id: "Login-modal"
+          -# .Login_form__login.Login_form__login--kokosaito{id: "Login-modal"}
+          -#   ログインする
 
           .Login_modal
             .Login_modal__oowaku
 
           = link_to "新規登録", new_user_registration_path, class: "Login_form__login Login_form__login--tasaito"        
 
-=render ('devise/sessions/new')
--# =render partial:('devise/registrations/new')
