@@ -3,6 +3,10 @@ $(function() {
 
   $('.Notification').fadeOut(2000);
 
+  $('#error_explanation').fadeIn(500);
+
+
+
   $('.Header_right__user_box').click(function(){
 
     if($('.Header_right__user_box_open').hasClass('open')){
