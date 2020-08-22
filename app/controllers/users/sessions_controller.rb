@@ -11,9 +11,6 @@ class Users::SessionsController < Devise::SessionsController
   # POST /resource/sign_in
   def create
     super
-    unless @user.save
-      root_path
-     end 
   end
 
   # サインアウト
