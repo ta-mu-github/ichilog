@@ -1,7 +1,6 @@
 $(function() {
   $('.Container').fadeIn(1500);
 
-  $('.Notification').fadeOut(2000);
 
   $('#error_explanation').fadeIn(500);
 
