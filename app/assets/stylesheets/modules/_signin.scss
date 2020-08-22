@@ -31,6 +31,8 @@
     flex-direction: column;
 
     &__container{
+      width:60%;
+      text-align: center;
 
 
       h2{
@@ -76,8 +78,7 @@
             margin-right:10px;
           }
 
-
-    
+            
         }
     
         &__image{
@@ -116,11 +117,28 @@
 
 
 
-      &__submit{
-        padding: 10px;
-        margin: 10px;
-        text-align:center;
+
+
+    &__form{
+      input{
+        width:80%;
+        margin:3px 0px;
+        padding:5px 0px;
       }
+      &__submit{
+        input{
+        margin:10px 0px;
+        width:40%;
+        border-radius:5px;
+        padding:10px;
+        cursor: pointer;
+        color:black;
+        border:1px solid black;
+      }
+    }
+
+
+    }
 
     }
 
@@ -131,7 +149,7 @@
       align-items: center;
 
       a{
-        color:gray;
+        color:blue;
         padding:5px 0px;
       }
 
@@ -151,9 +169,7 @@
   background-color: rgba(0,0,0,0.4);
   /* 自由に位置指定 */
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  width: 100vw;
+  height:calc(100vh - 80px);
   content: ' ';
 }

@@ -2,16 +2,17 @@
   .Signin__wrapper
     .Signin__wrapper__container
       %h2 ログイン
+      =link_to "x",root_path,{class:"Signin__wrapper__container__close_btn"}
+  
 
-      = form_with model: @user, url: user_session_path, id: 'new_user', class: 'new_user', local: true do |f|
+      = form_with model: @user, url: user_session_path, id: 'new_user', class: 'Signin__wrapper__container__form', local: true do |f|
 
         .field
           = f.email_field :email, placeholder:"メールアドレス", autofocus: true
         .field
           = f.password_field :password, placeholder:"パスワード", autocomplete: "off"
-        .Signin__wrapper__container__submit
+        .Signin__wrapper__container__form__submit
           = f.submit "ログイン"
 
       .Signin__wrapper__etc
-        = link_to "新規アカウント登録", new_user_registration_path
-        = link_to "トップページに戻る", root_path
+        = link_to "はじめてご利用になる方", new_user_registration_path
