@@ -6,20 +6,11 @@
     - if user_signed_in?          
       .Search
         =form_with url:search_posts_path, local:true,method: :get,class: "Search__form" do |form|
-          //= icon('fas', 'search',  class: "Account__btn--icon")        
           =form.text_field :keyword, placeholder: "商品を検索する"
           =form.submit "検索"        
-    -# =form_with url:search_users_path, local:true,method: :get,class: "Search__form" do |form|
-    -#   = icon('fas', 'search',  class: "Account__btn--icon")        
-    -#   =form.text_field :keyword, placeholder: "ユーザ検索"
-    -#   =form.submit "検索"            
-    //-else
 
   .Header_right    
     - if user_signed_in?
-      
-        
-      //= link_to "ログアウト", destroy_user_session_path, class: "Header_right__loginlogout Header_right__loginlogout--logout", method: :delete
 
       .Search__user_ichiran
         =link_to "ユーザ一覧",search_users_path

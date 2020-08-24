@@ -78,14 +78,17 @@
               
 
               .Right_kabu
-                //いいね　カレントユーザだと非ログイン時にエラーが出るし、カレントにしとかないと無限にボタン押せてしまう問題”
                 .Right_iine
-                  - if Like.find_by(user_id:current_user.id, post_id: p.id)
-                    = link_to(post_like_path(p.id), {method: "delete"}) do
-                      = icon('fas', 'heart',  class: "Account__btn--icon")
+                  - if user_signed_in?
+                    - if Like.find_by(user_id:current_user.id, post_id: p.id)
+                      = link_to(post_like_path(p.id), {method: "delete"}) do
+                        = icon('fas', 'heart',  class: "Account__btn--icon")
+                    - else
+                      = link_to(post_likes_path(p), {method: "post"}) do
+                        = icon('far', 'heart',  class: "Account__btn--icon")                
                   - else
                     = link_to(post_likes_path(p), {method: "post"}) do
-                      = icon('far', 'heart',  class: "Account__btn--icon")                
+                      = icon('far', 'heart',  class: "Account__btn--icon")                                  
 
                   =Like.where(post_id: p.id).count
                 
