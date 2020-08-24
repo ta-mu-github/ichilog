@@ -1,0 +1,172 @@
+@keyframes typing {
+  from { width: 0 }
+}
+
+@keyframes cursor {
+  50% { border-right-color: transparent; }
+}
+
+
+/***トップページ（ログイン前）***/
+//全体部分
+.Wrapper{
+  height: calc(100vh - 60px);
+  min-height:90%;
+  // width:100vw;
+  background-color:darkcyan;
+  background-blend-mode: lighten;
+  background-image:linear-gradient(135deg,#0ebfee,#2626ff);
+  color:black;  
+  background-image: url(/assets/日記を書く人.jpg);  
+  background-size: cover;
+
+}
+
+.Container{
+  display:none;
+}
+
+//メイン部分
+.Main{
+  height:100%;
+  text-align:center;
+  
+
+}
+
+.Logo{
+  padding-top:30px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+
+  &__waku{
+    font-size:140px;    
+    color: white;
+    font-weight: bold;
+    letter-spacing: 0.15em;
+    text-shadow: black 1px 1px 0px, black -1px 1px 0px, black 1px -1px 0px, black -1px -1px 0px;
+    
+
+      width: 6.4ch;           //文字数
+      overflow: hidden;     //この設定のおかげで文字がどんどん出てくるような表現ができている
+      white-space: nowrap;  //文字列が折り返すのを防ぐ  ←これはよくわからない
+      border-right: .08em solid white; //キーボードの縦棒。（emが大きくなるほど太くなる）
+      animation: typing 2.5s steps(10),   //  アニメーション処理「typing」を呼び出している。 *sでタイピング速度。steps(*)で文字が表示される間隔。
+      cursor 1s steps(1) infinite;      //  カーソルを点滅させる処理「cursor」を呼び出している。
+
+  }
+
+  &__catchcopy{
+
+
+  }
+
+  &__title{
+    font-size:100px;
+    padding-bottom: 50px;
+  }
+
+
+}
+
+.Login_form{
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center;  
+  height:200px;
+  width:100%;
+
+  input{
+    display:block;
+    width:30%;
+    padding:5px;
+    margin:10px;
+  }
+
+  .Login_modal{
+    top: 18%;
+    left: 28%;
+    background-color: #e6ecf0;
+    width: 600px;
+    position: absolute;
+    height: 500px;
+    display:none;
+   
+  }
+
+
+  &__login{
+    margin-top:10px;
+    width:20%;
+    border-radius:20px;
+    padding:10px;
+    cursor: pointer;
+   
+
+    &--kokosaito{
+      color:black;
+      background-color:#FFFF1A;
+      margin: 10px 0px;
+      box-shadow: 0 5px #E6E600;
+    }
+
+    &--kokosaito:active{
+      position:relative;
+      top:6px;
+      box-shadow:none;
+    }
+
+    &--tasaito{
+      color:white;
+      background-color:#3333FF;
+      box-shadow: 0 5px #3818ED;    }
+
+      &--tasaito:active{
+        position:relative;
+        top:6px;
+        box-shadow:none;
+      }
+
+  }
+}
+
+.Account_fotter{
+  height:20px;
+  background-color:white;
+  text-align:center;
+  
+  h2{
+    color:black;
+    font-size:12px;
+  }
+
+}
+
+.Landing{
+  height:200vh;
+  background-color:white;
+  background-image: url('/assets/background137.jpg');
+
+  &__wrapper{
+    height:100%;
+
+    &__title{
+        h1{
+          font-size: 120px;
+          color: white;
+          font-weight: bold;
+          letter-spacing: 0.15em;
+          text-shadow: black 1px 1px 0px, black -1px 1px 0px, black 1px -1px 0px, black -1px -1px 0px;
+          overflow: hidden;
+          white-space: nowrap;
+          border-right: .08em solid white;
+        }
+      }
+
+  }
+
+
+
+}
