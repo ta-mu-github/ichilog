@@ -24,7 +24,7 @@
           .Follow__follow_list__member__selfintro
             .Follow__follow_list__member__selfintro__moji
               =link_to user_path(u.follow_id) do
-                -User.find_by(id:u.follow_id).user_name
+                -User.find_by(id:u.follow_id).self_introduction
 
           .Follow__follow_list__member__follow_unfollow
             -if user_signed_in?
