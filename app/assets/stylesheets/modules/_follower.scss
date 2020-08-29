@@ -1,0 +1,84 @@
+.Follower{
+  display: flex;
+  justify-content: center;
+  background-color: #2626ff;
+  background-image: linear-gradient(135deg, #0ebfee, #2626ff);
+  
+
+  &__follow_list{
+    width: 680px;
+    padding: 20px;
+    border-radius: 10px;
+    height: calc(100vh - 120px);
+    border: 1px solid black;
+    -webkit-border-radius: 8px;
+    -webkit-box-shadow: rgba(181, 181, 181, 0.278431) 0px 0px 6px 3px;
+    background-color: white;
+    overflow: auto;
+
+
+    &__follow_an_follower{
+
+      display:flex;
+      justify-content: space-around;
+
+      &__follower{
+        font-weight:600;
+        border-bottom:1px solid black;
+      }
+
+      a{
+        
+        color:black;
+      }
+
+    }
+
+
+    &__member{
+      display:flex;
+      margin:50px 0px;
+      height:150px;
+      border:1px solid black;
+      padding:10px;
+
+      img{
+        height: 100px;
+        width: 100px;
+        border: 1px solid black;
+        border-radius: 100px;
+      }
+
+      &__image{
+        width: 20%;
+        &__user_name{
+          text-align:center;
+          margin:0px 15px;
+            a{
+              color:black;
+            }
+        }
+    
+        
+      }
+
+
+      &__selfintro{
+        width:60%;
+        border:1px solid black;
+        margin: 0px 20px;
+        &__moji{
+          a{
+            color:black;
+
+          }
+
+        }
+      }
+
+
+    }
+
+
+  }
+}

@@ -12,43 +12,54 @@
               = link_to "#", class: "Account__btn Account__btn--User" do
                 %img.Review_left__No_image{ src: "/assets/Noimage.png", size: "150x200", alt: "logo" }  
 
-          .Profile_waku__user_name
-            .Profile_waku__name          
-              %h1 
-              =@users.user_name
-
+          .Profile_waku__user_name_and_follow
+            .Profile_waku__user_name_and_follow__user_name
+              .Profile_waku__user_name_and_follow__user_name__name          
+                %h1 
+                =@users.user_name
             
+            .Profile_waku__user_name_and_follow__follow
+              -if user_signed_in?
+                - unless current_user == @users 
+                  - if current_user.following?(@users)
+                    = form_for(current_user.relationships.find_by(follow_id: @users.id), html: { method: :delete }) do |f|
+                      = f.hidden_field :follow_id, value: @users.id
+                      = f.submit 'フォロー中', class: 'Profile_waku__user_name_and_follow__follow__follow-now'
+                  - else
+                    = form_for(current_user.relationships.build) do |f|
+                      = f.hidden_field :follow_id, value: @users.id
+                      = f.submit 'フォローする', class: 'Profile_waku__user_name_and_follow__follow__follows'
 
         .Infomation
-          .Infomation__reviewcount
-            投稿数<br>
-            =Post.where(user_id: @users.id).count
+          .Infomation__left
+            .Infomation__left__space
+              投稿数：<br>
+              .Infomation__left__space__count
+                =Post.where(user_id: @users.id).count
 
-          .Infomation__reviewcount
-            いいねされた数<br>
-            =Like.where(post_id: Post.where(user_id: @users.id)).count            
+            .Infomation__left__space            
+              いいねした投稿：<br>
+              .Infomation__left__space__count            
+                =Like.where(user_id: @users.id).count            
+              -# =Like.where(post_id: Post.where(user_id: @users.id)).count            
 
+          .Infomation__right
+            .Infomation__right__space
+              =link_to "フォロー数：#{Relationship.where(user_id: @users.id).count}",follow_user_path
+              
+
+            .Infomation__right__space
+              =link_to "フォロワー数：#{Relationship.where(follow_id: @users.id).count}",follower_user_path                          
+
+          
       .Mypage_List
         .Toukou_Profile_info
           プロフィール情報：<br>
           =@users.self_introduction
-        -# .Toukou
-        -#   .Toukou__ichiran
-        -#     = icon('fas', 'list',  class: "Account__btn--icon")        
-        -#     = link_to "投稿一覧", new_post_path, class: "Toukou__Review--btn"          
 
-        -# .Toukou
-        -#   .Toukou__Review
-        -#     = icon('fas', 'pen-nib',  class: "Account__btn--icon")        
-        -#     = link_to "レビューを投稿する", new_post_path, class: "Toukou__Review--btn"        
 
-        -# .Toukou
-        -#   .Toukou__Review
-        -#     = icon('far', 'user',  class: "Account__btn--icon")        
-        -#     = link_to "プロフィールを編集する", edit_user_registration_path, class: "Toukou__Review--btn"          
-          
     .Mypage_Main__right                  
-      %h1 タイムライン
+      %h1 自分の投稿
       .Mypage_Main__right_info
         - @posts.each do |p|  
           .Review

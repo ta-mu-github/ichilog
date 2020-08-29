@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 #=========================共通メソッド=========================#
 
   #指定したアクションは全て、user_idを受け取る。
-  before_action :set_user_id, only: [:show]
+  before_action :set_user_id, only: [:show, :follow, :follower]
 
   #ログインしていない場合の処理
   before_action :move_to_index, except: [:index, :show]
@@ -20,7 +20,6 @@ class UsersController < ApplicationController
 
   #マイページ(GET)
   def show
-
   end
 
   #投稿を検索する処理（GET）
@@ -28,8 +27,15 @@ class UsersController < ApplicationController
     @users = User.search(params[:keyword])
   end
 
+  #フォロー（GET）
+  def follow
+    @relationships = Relationship.where(user_id: @users.id).order("created_at DESC")
+  end
   
-  
+  #フォロワー（GET）
+  def follower
+    @relationship = Relationship.where(follow_id: @users.id).order("created_at DESC")
+  end
 
 
   #=========================プライベートメソッド=========================#

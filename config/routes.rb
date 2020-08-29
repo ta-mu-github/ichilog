@@ -9,6 +9,14 @@ Rails.application.routes.draw do
   root to: 'users#index'
 
   resources :users, only: [:index, :show] do
+
+    #フォロー
+    member do
+      get 'follow'
+      get 'follower'
+    end
+
+    #ユーザ検索用
     collection do
       get 'search'
     end
@@ -27,6 +35,6 @@ Rails.application.routes.draw do
   end
 
   #フォロー
-  resources :relationships, only: [:create, :destroy]
+  resources :relationships, only: [:create, :destroy,:index]
   
 end
