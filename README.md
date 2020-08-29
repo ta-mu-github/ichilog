@@ -58,6 +58,7 @@ https://ichilog.herokuapp.com/
 - has_many :posts
 - has_many :likes
 - has_many :comments
+- has_many :relationships
 
 
 ## posts(投稿)
@@ -66,10 +67,10 @@ https://ichilog.herokuapp.com/
 |------|----|-------|
 |id|integer|null: false|
 |title|string|null: false|
-|category|string|null: false|
+|category|string||
 |content|string|null: false|
-|image|string|null: false|
-|user_id|reference|null: false, foreign_key: true: { to_table: :users }|
+|image|string||
+|user_id|reference|null: false, foreign_key: true|
 |rate|string|null: false|
 
 ### Association
@@ -104,6 +105,16 @@ https://ichilog.herokuapp.com/
 - belongs_to :post
 
 
+## relationships(フォロー)
+
+|Column|Type|Options|
+|------|----|-------|
+|id|integer|null: false|
+|user_id|reference|null: false, foreign_key: true|
+|follow_id|reference|null: false, foreign_key: true: { to_table: :users }|
+
+### Association
+- belongs_to :user
 
 
 ### トップページ
