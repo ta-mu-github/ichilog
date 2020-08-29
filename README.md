@@ -119,5 +119,6 @@ https://ichilog.herokuapp.com/
 ![ダウンロード](https://user-images.githubusercontent.com/64738234/90467629-a4192a00-e14f-11ea-8434-0a3c49a0d123.gif)
 
 ### 投稿一覧画面
-<img width="1440" alt="スクリーンショット 2020-08-11 13 41 31" src="https://user-images.githubusercontent.com/64738234/89857950-627d0200-dbd8-11ea-9fd7-f9adbe894e36.png">
+<img width="1439" alt="スクリーンショット 2020-08-29 14 34 14" src="https://user-images.githubusercontent.com/64738234/91629539-c7bc5a00-ea04-11ea-9785-ed5d757b7f9d.png">
+
 
