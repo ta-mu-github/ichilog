@@ -16,6 +16,15 @@
     background-color: white;
     overflow: auto;
 
+    &__none_follower{
+      height: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      }
+  
+
 
     &__follow_an_follower{
 
@@ -33,6 +42,7 @@
       }
 
     }
+
 
 
     &__member{

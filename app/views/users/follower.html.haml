@@ -7,29 +7,32 @@
       .Follower__follow_list__follow_an_follower__follower
         フォロワー
 
-    - @relationship.each do |u|
-      .Follower__follow_list__member
-        .Follower__follow_list__member__image
-          %img.Review_left__No_image{ src: "/assets/Noimage.png", size: "150x200", alt: "logo" }  
-          .Follower__follow_list__member__image__user_name
-            =link_to user_path(u.user_id) do
-              -User.find_by(id:u.user_id).user_name
+    - unless @relationship.empty?
+      - @relationship.each do |u|
+        .Follower__follow_list__member
+          .Follower__follow_list__member__image
+            %img.Review_left__No_image{ src: "/assets/Noimage.png", size: "150x200", alt: "logo" }  
+            .Follower__follow_list__member__image__user_name
+              =link_to user_path(u.user_id) do
+                -User.find_by(id:u.user_id).user_name
 
-        .Follower__follow_list__member__selfintro
-          .Follower__follow_list__member__selfintro__moji
-            =link_to user_path(u.user_id) do
-              -User.find_by(id:u.user_id).user_name
+          .Follower__follow_list__member__selfintro
+            .Follower__follow_list__member__selfintro__moji
+              =link_to user_path(u.user_id) do
+                -User.find_by(id:u.user_id).user_name
 
-        .Follower__follow_list__member__follow_unfollow
-          -if user_signed_in?
-            - unless current_user == User.find_by(id: u.user_id)                       
-              - if current_user.following?(User.find_by(id: u.user_id))
-                = form_for(current_user.relationships.find_by(follow_id: u.user_id), html: { method: :delete }) do |f|
-                  = f.hidden_field :follow_id, value: u.user_id
-                  = f.submit 'フォロー解除', class: 'Profile_waku__user_name_and_Follower__Follower__follow-now'
-                  
-              - else
-                = form_for(current_user.relationships.build) do |f|
-                  = f.hidden_field :follow_id, value: u.user_id
-                  = f.submit 'フォローする', class: 'Profile_waku__user_name_and_Follower__Follower__follows'
-                  
+          .Follower__follow_list__member__follow_unfollow
+            -if user_signed_in?
+              - unless current_user == User.find_by(id: u.user_id)                       
+                - if current_user.following?(User.find_by(id: u.user_id))
+                  = form_for(current_user.relationships.find_by(follow_id: u.user_id), html: { method: :delete }) do |f|
+                    = f.hidden_field :follow_id, value: u.user_id
+                    = f.submit 'フォロー解除', class: 'Profile_waku__user_name_and_Follower__Follower__follow-now'
+                    
+                - else
+                  = form_for(current_user.relationships.build) do |f|
+                    = f.hidden_field :follow_id, value: u.user_id
+                    = f.submit 'フォローする', class: 'Profile_waku__user_name_and_Follower__Follower__follows'
+    - else
+      .Follower__follow_list__none_follower
+        まだフォロワーがいません          
