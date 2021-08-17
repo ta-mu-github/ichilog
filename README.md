@@ -37,7 +37,8 @@ https://ichilog.herokuapp.com/
 ・投稿非公開機能<br>
 ・レスポンシブデザイン<br>
 ・AmazonAPIの導入<br>
-・画像複数枚投稿機能の導入
+・画像複数枚投稿機能の導入<br>
+・BootStrapを使って画面の見栄えを良くする。
 
 
 ## DB設計：<br>
