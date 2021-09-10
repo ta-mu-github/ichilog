@@ -21,7 +21,7 @@ https://ichilog.herokuapp.com/
 ## 制作背景(意図)：<br>
 制作した理由は大きく分けて2点あります。<br>
 1点目は、自分自身記録サービスとして利用したかったということ。<br>
-2点目は、友人に利用してもらいという思いから作成しました。<br>
+2点目は、友人に利用してもらいたいという思いから作成しました。<br>
 アプリ名の「Ichilog」の「Ichi」は友人の名前から取っています。
 
 ## 工夫したポイント：<br>
@@ -35,11 +35,10 @@ https://ichilog.herokuapp.com/
 
 ## 課題や今後実装したい機能：<br>
 ・投稿非公開機能<br>
-・フォロー機能<br>
-・ランディングページの作成<br>
 ・レスポンシブデザイン<br>
 ・AmazonAPIの導入<br>
-・画像複数枚投稿機能の導入
+・画像複数枚投稿機能の導入<br>
+・BootStrapを使って画面の見栄えを良くする。
 
 
 ## DB設計：<br>
@@ -58,6 +57,7 @@ https://ichilog.herokuapp.com/
 - has_many :posts
 - has_many :likes
 - has_many :comments
+- has_many :relationships
 
 
 ## posts(投稿)
@@ -66,10 +66,10 @@ https://ichilog.herokuapp.com/
 |------|----|-------|
 |id|integer|null: false|
 |title|string|null: false|
-|category|string|null: false|
+|category|string||
 |content|string|null: false|
-|image|string|null: false|
-|user_id|reference|null: false, foreign_key: true: { to_table: :users }|
+|image|string||
+|user_id|reference|null: false, foreign_key: true|
 |rate|string|null: false|
 
 ### Association
@@ -104,11 +104,22 @@ https://ichilog.herokuapp.com/
 - belongs_to :post
 
 
+## relationships(フォロー)
+
+|Column|Type|Options|
+|------|----|-------|
+|id|integer|null: false|
+|user_id|reference|null: false, foreign_key: true|
+|follow_id|reference|null: false, foreign_key: true: { to_table: :users }|
+
+### Association
+- belongs_to :user
 
 
 ### トップページ
 ![ダウンロード](https://user-images.githubusercontent.com/64738234/90467629-a4192a00-e14f-11ea-8434-0a3c49a0d123.gif)
 
 ### 投稿一覧画面
-<img width="1440" alt="スクリーンショット 2020-08-11 13 41 31" src="https://user-images.githubusercontent.com/64738234/89857950-627d0200-dbd8-11ea-9fd7-f9adbe894e36.png">
+<img width="1439" alt="スクリーンショット 2020-08-29 14 34 14" src="https://user-images.githubusercontent.com/64738234/91629539-c7bc5a00-ea04-11ea-9785-ed5d757b7f9d.png">
+
 

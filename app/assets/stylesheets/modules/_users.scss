@@ -44,17 +44,32 @@
       border: 1px solid white;
     }
 
-    &__user_name{
-      font-size: 20px;
-      width: 30%;
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      flex-wrap: wrap;
-  
-    }
+    &__user_name_and_follow{
+      width:40%;
+      &__user_name{
+        font-size: 20px;
+        width: 100%;
+        height: 100%;
+    
+      }
+
+      &__follow{
+        margin: 10px 0px;
+        input{
+          width:100%;
+          padding: 10px;
+          border: 1px solid white;
+          border-radius: 10px;
+          
+          font-size: 12px;
+          cursor:pointer;
+        }
+        &__follow-now{
+          background: yellow;
+        }
+
+      }
+    }  
 
     &__henshu{
       font-size:12px
@@ -67,10 +82,33 @@
   }
 
   .Infomation{
-    display:flex;
-    justify-content: space-around;
-    text-align: center;
     border: 1px solid;
+    display:flex;
+    padding:20px;
+
+    &__left{
+      width:50%;
+      &__space{
+        display:flex;
+      }
+    }
+
+    &__right{
+      width:50%;
+
+
+      &__space{
+        display:flex;
+
+        :hover{
+          color:yellow;
+          border-bottom:1px solid yellow;
+        }
+  
+
+      }
+    }
+
   }
 
   .Mypage_List{

@@ -7,7 +7,7 @@
       .Search
         =form_with url:search_posts_path, local:true,method: :get,class: "Search__form" do |form|
           =form.text_field :keyword, placeholder: "商品を検索する"
-          =form.submit "検索"        
+          =form.submit "検索",class: "btn btn-dark"        
 
   .Header_right    
     - if user_signed_in?
