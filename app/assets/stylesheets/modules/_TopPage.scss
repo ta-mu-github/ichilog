@@ -144,8 +144,19 @@
 
 }
 
+@mixin font($font-size) {
+  font-size: $font-size;
+  color: white;
+  font-weight: bold;
+  letter-spacing: 0.15em;
+  text-shadow: black 1px 1px 0px, black -1px 1px 0px, black 1px -1px 0px, black -1px -1px 0px;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: .08em solid white;
+}
+
 .Landing{
-  height:200vh;
+  // height:100vh;
   background-color:white;
   background-image: url('/assets/background137.jpg');
 
@@ -154,15 +165,11 @@
 
     &__title{
         h1{
-          font-size: 120px;
-          color: white;
-          font-weight: bold;
-          letter-spacing: 0.15em;
-          text-shadow: black 1px 1px 0px, black -1px 1px 0px, black 1px -1px 0px, black -1px -1px 0px;
-          overflow: hidden;
-          white-space: nowrap;
-          border-right: .08em solid white;
+          @include font(120px)
         }
+        h2{
+          @include font(30px)
+        }        
       }
 
   }

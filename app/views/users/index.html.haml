@@ -23,10 +23,19 @@
         %h1
           What's <br>
           Ichilog？
-    .Landing__wrapper__container
-      .Landing__wrapper__container__left
-        ichilogはありとあらゆる商品をレビューするサービスです。<br>
-      .Landing__wrapper__container__right          
+        %h2
+          ichilogはありとあらゆる商品をレビューするサービスです。<br>        
+          うんたらかんたら、どうたらこうたら<br>                  
+          うんたらかんたら、どうたらこうたら<br>                  
+          うんたらかんたら、どうたらこうたら<br>                                      
+    .Landing__wrapper__title
+      %h1 
+        さあ、はじめよう！   
+    .Account_touroku
+      .Login_form
+        = link_to "ログインする", new_user_session_path, class: "Login_form__login Login_form__login--kokosaito", id: "Login-modal"
 
+        .Login_modal
+          .Login_modal__oowaku
 
--# = render 'layouts/footer'
+        = link_to "新規登録", new_user_registration_path, class: "Login_form__login Login_form__login--tasaito"        
