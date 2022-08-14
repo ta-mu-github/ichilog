@@ -12,6 +12,7 @@
 
 ・本番環境：<br>
 https://ichilog.herokuapp.com/
+※削除（2022.08.14）
 <br>
 テスト用アカウント:：<br>
 メールアドレス：testuser@test.co.jp<br>
